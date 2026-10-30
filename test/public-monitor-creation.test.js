@@ -14,7 +14,8 @@ test('public monitor creation is enabled by config without granting admin role',
   assert.equal(denied({uid:'ordinary'}, {},()=>false),true);
   assert.equal(denied({uid:'admin'}, {},()=>true),false);
   assert.match(config,/^PUBLIC_MONITOR_CREATION\s*=\s*"true"$/m);
-  assert.match(config,/^MAX_GLOBAL_MONITORS\s*=\s*"12"$/m);
+  assert.match(config,/^MAX_GLOBAL_MONITORS\s*=\s*"30"$/m);
+  assert.match(config,/^MAX_MONITORS_PER_USER\s*=\s*"5"$/m);
   assert.match(api,/if\(!isAdmin\(user,env\)\)return fail\("Forbidden\.",403\)/);
 });
 test('public onboarding retains account, ownership and abuse barriers',()=>{
@@ -29,5 +30,5 @@ test('public onboarding retains account, ownership and abuse barriers',()=>{
   assert.match(html,/5-minute checks[^<]*Public beta/i);
   assert.doesNotMatch(html,/5-minute checks[^<]*Private beta/i);
   assert.doesNotMatch(html,/monitor creation is limited to (the )?administrator/i);
-  assert.match(html,/create up to 3 monitors for approved public HTTPS websites and APIs/);
+  assert.match(html,/create up to 5 monitors for approved public HTTPS websites and APIs/);
 });
