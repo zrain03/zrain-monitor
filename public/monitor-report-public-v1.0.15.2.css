@@ -1,0 +1,16 @@
+/* Zrain Monitor 1.0.15.2: public launch print layout; screen UI untouched. */
+@page { size: A4; margin: 12mm 13mm; }
+@media print {
+  body.zm-print-report .zm-report-sheet h2 { font-size: 28px !important; line-height: 1.18 !important; }
+  body.zm-print-report .zm-report-sheet h3 { margin-top: 18px !important; margin-bottom: 8px !important; }
+  body.zm-print-report .zm-report-sheet .zm-report-tiles > div { padding: 12px !important; }
+  body.zm-print-report .zm-report-sheet .zm-facts > div { padding: 4px 0 !important; }
+  body.zm-print-report .zm-report-sheet .zm-report-notice { padding: 10px !important; }
+  body.zm-print-report .zm-report-sheet table { width: 100% !important; table-layout: auto !important; font-size: 10px !important; line-height: 1.2 !important; }
+  body.zm-print-report .zm-report-sheet th,
+  body.zm-print-report .zm-report-sheet td { padding: 5px 5px !important; }
+  body.zm-print-report .zm-report-sheet th:nth-child(2),
+  body.zm-print-report .zm-report-sheet td:nth-child(2) { min-width: 72px !important; white-space: nowrap !important; hyphens: none !important; }
+  body.zm-print-report .zm-report-sheet tr { break-inside: avoid; page-break-inside: avoid; }
+  body.zm-print-report .zm-report-sheet .zm-report-logo { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

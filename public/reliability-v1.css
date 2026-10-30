@@ -1,0 +1,14 @@
+/* Scoped additional clarity. Shared Zrain header, footer and auth styling remain unchanged. */
+.capacity-info {padding:12px 16px;border:1px solid #e8ddd4;border-radius:12px;background:#fffaf6;color:#5b6570;font-size:12px;line-height:1.6;margin:14px 0}
+.capacity-info.capacity-full {border-color:#ecd7b7;background:#fffbf3;color:#86623b}
+.telegram-delivery-panel {margin-top:19px;border-top:1px solid #ebdfd5;padding-top:16px}
+.telegram-delivery-panel h4 {font-size:14px;font-weight:800;color:#253346;margin:0 0 6px}
+.telegram-delivery-panel > p {line-height:1.55}
+.telegram-delivery-item {display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:7px 0;padding:10px 12px;border:1px solid #ece2da;border-radius:10px;background:#fffdfa;font-size:12px}
+.telegram-delivery-item strong {color:#263549;flex:1;min-width:140px;overflow-wrap:anywhere}
+.telegram-delivery-item small {color:#76818d;font-size:11px}
+.telegram-delivery-state {padding:4px 9px;border-radius:999px;background:#f4f0ea;color:#80694f;font-size:11px;font-weight:750}
+.telegram-delivery-state.state-sent {background:#e9f6ee;color:#26784e}
+.telegram-delivery-state.state-failed {background:#fcefea;color:#a34836}
+.telegram-empty {font-size:12px;color:#758194;margin:12px 0}
+@media(max-width:720px) {.telegram-delivery-item {align-items:flex-start;flex-direction:column;gap:5px}}

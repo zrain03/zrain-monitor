@@ -1,0 +1,25 @@
+{
+  "name": "zrain-monitor",
+  "version": "1.0.21",
+  "type": "module",
+  "private": true,
+  "description": "Independent free-tier website and API uptime monitor by Zrain",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "ui:sync": "node scripts/sync-zrain-ui.mjs",
+    "ui:check": "node scripts/sync-zrain-ui.mjs --check",
+    "test:release": "npm run ui:check && npm test",
+    "dev": "wrangler dev --test-scheduled",
+    "db:local": "wrangler d1 migrations apply zrain-monitor --local",
+    "db:remote": "wrangler d1 migrations apply zrain-monitor --remote",
+    "deploy:worker": "npm run test:release && wrangler deploy",
+    "deploy:web": "npm run test:release && firebase deploy --only hosting --project zrain-monitor"
+  },
+  "dependencies": {
+    "@zrain/ui": "github:zrain03/zrain-ui#fec7b1fe5deab157bdadf0af19d9384b1dc418f0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "zrainUi": {"publicDir": "public"}
+}

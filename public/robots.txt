@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /_preview.html
+Sitemap: https://zrain-monitor.web.app/sitemap.xml

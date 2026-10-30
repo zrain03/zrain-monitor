@@ -1,0 +1,127 @@
+/* ZRAIN MONITOR REPORT UI v1.0.13 (MAIN STYLESHEET EMBED) */
+/* Zrain Monitor v1.0.12 — reports and HTTP glossary; scoped to new UI only. */
+.zm-report-card{margin:35px 0 15px;border:1px solid #eddcd2;border-radius:22px;background:#fffdfb;padding:28px;box-shadow:0 8px 28px #85492708}
+.zm-report-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}
+.zm-report-heading h3{font-size:24px;letter-spacing:-.7px;margin:4px 0 8px;color:#172231}
+.zm-kicker{margin:0;color:#b84a31;font-size:10px;font-weight:800;letter-spacing:1.4px}
+.zm-muted{color:#738092;font-size:13px;line-height:1.7}
+.zm-report-heading .zm-muted{max-width:680px;margin:0}
+.zm-report-controls{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin:24px 0 15px}
+.zm-report-controls label{font-size:12px;color:#526071;font-weight:750;align-self:center}
+.zm-report-controls select{min-height:43px;max-width:100%;background:#fff;border:1px solid #e9d9cf;border-radius:10px;padding:8px 12px;color:#172231;font:600 13px/1.5 Inter,"Segoe UI",Arial,sans-serif}
+.zm-report-controls button{min-height:43px}
+.zm-report-controls button:disabled{opacity:.55;cursor:default}
+.zm-http-guide{margin-top:27px;border:1px solid #eddfd7;background:#fff9f5;border-radius:16px;padding:18px 21px}
+.zm-http-guide>summary{color:#9f432f;font-size:15px;font-weight:800;cursor:pointer}
+.zm-http-guide .zm-explainer{font-size:13px;color:#526071;line-height:1.7}
+.zm-code-group{margin:11px 0;border:1px solid #eee0d6;border-radius:11px;background:#fff}
+.zm-code-group>summary{padding:12px 15px;cursor:pointer;font-size:13px;font-weight:800;color:#172231}
+.zm-code-group>.zm-muted{margin:0 15px 10px}
+.zm-code-list{padding:4px 15px 11px}
+.zm-code-row{display:grid;grid-template-columns:54px minmax(115px,.75fr) minmax(0,2fr);gap:14px;padding:11px 2px;border-top:1px solid #f2e9e4;font-size:12px}
+.zm-code-row strong{color:#b84a31;font-variant-numeric:tabular-nums}.zm-code-row b{color:#172231}.zm-code-row span{color:#667286;line-height:1.55}
+.zm-footnote{font-size:11px;color:#738092;margin:16px 0 0}
+.zm-report-output:empty{display:none}
+.zm-report-sheet{margin-top:23px;background:white;border:1px solid #eaded5;border-radius:17px;padding:clamp(19px,3vw,34px);color:#172231}
+.zm-report-brand{display:flex;gap:10px;align-items:center;margin-bottom:22px}
+.zm-report-brand b{font-weight:800;font-size:15px}.zm-report-brand small{display:block;color:#738092;font-size:11px}
+.zm-report-mark{background:#fff0e5;color:#b84a31;border:1px solid #ead5c6;display:grid;place-items:center;width:41px;height:41px;border-radius:12px;font-size:23px;font-weight:900}
+.zm-report-sheet h2{margin:8px 0;font-size:clamp(25px,3vw,34px);letter-spacing:-1px;overflow-wrap:anywhere}
+.zm-report-lead{font-size:14px;color:#526071;line-height:1.7;max-width:760px}
+.zm-report-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:25px 0}
+.zm-report-tiles>div{padding:15px;border-radius:12px;background:#fff4ed;min-width:0}
+.zm-report-tiles small{color:#718092;display:block;font-size:11px}.zm-report-tiles strong{display:block;font-size:22px;margin-top:6px;overflow-wrap:anywhere}
+.zm-report-sheet h3{font-size:18px;margin:27px 0 13px}.zm-report-sheet p,.zm-report-sheet li{font-size:13px;line-height:1.75}
+.zm-facts{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:0}
+.zm-facts>div{padding:9px 0;border-bottom:1px solid #f0e6df;min-width:0}
+.zm-facts dt{font-size:11px;color:#728092}.zm-facts dd{margin:3px 0 0;font-size:13px;font-weight:650;overflow-wrap:anywhere}
+.zm-report-notice{background:#fff3e8;border:1px solid #f0ddcd;border-radius:12px;padding:13px 16px;color:#674d41}
+.zm-report-table-scroll{max-width:100%;overflow-x:auto}
+.zm-report-sheet table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}
+.zm-report-sheet th,.zm-report-sheet td{border-bottom:1px solid #f0e2da;padding:11px 9px;vertical-align:top}
+.zm-report-sheet th{color:#69798c;font-weight:750;white-space:nowrap}.zm-report-sheet td{overflow-wrap:anywhere}
+.zm-report-footer{margin-top:30px;color:#718092;font-size:11px!important;border-top:1px solid #eee3db;padding-top:16px}
+@media(max-width:800px){.zm-report-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.zm-facts{grid-template-columns:1fr}}
+@media(max-width:520px){.zm-report-card{padding:18px}.zm-report-controls{align-items:stretch}.zm-report-controls select,.zm-report-controls button{width:100%}.zm-report-controls label{width:100%;margin-bottom:-7px}.zm-code-row{grid-template-columns:44px minmax(0,1fr)}.zm-code-row span{grid-column:2}}
+@media print{
+  @page{size:A4;margin:16mm}
+  body.zm-print-report{background:#fff!important;color:#172231!important}
+  body.zm-print-report .zrain-header,body.zm-print-report .zrain-footer,
+  body.zm-print-report #hero,body.zm-print-report #signedout,
+  body.zm-print-report #banner,body.zm-print-report #dashboard>.section-block:not(#monitors),
+  body.zm-print-report #monitors>*:not(#reports),body.zm-print-report #reports>*:not(#zm-report-output){display:none!important}
+  body.zm-print-report #main,body.zm-print-report #dashboard,body.zm-print-report #monitors,
+  body.zm-print-report #reports,body.zm-print-report #zm-report-output{display:block!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;width:100%!important;max-width:none!important}
+  body.zm-print-report .zm-report-sheet{display:block!important;margin:0;padding:0;border:0;box-shadow:none}
+  body.zm-print-report .zm-report-sheet h3{break-after:avoid}
+  body.zm-print-report .zm-report-tiles>div{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  body.zm-print-report tr{break-inside:avoid}
+}
+
+
+/* ZRAIN MONITOR REPORT UI v1.0.13: the main style.css is the authoritative style source.
+   Based on Zrain's existing ivory / terracotta / navy design system. */
+#reports.zm-report-card{
+  display:block!important;
+  margin:30px 0 26px!important;
+  padding:clamp(20px,2.4vw,34px)!important;
+  border:1px solid #eadbd0!important;
+  border-radius:22px!important;
+  background:#fffdfb!important;
+  box-shadow:0 8px 27px rgba(112,59,38,.055)!important;
+  color:#172231;
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+  font-size:14px;
+  line-height:1.6;
+  min-width:0;
+}
+#reports .zm-report-heading{display:block;max-width:800px}
+#reports .zm-kicker{margin:0 0 10px;color:#b84a31;font-size:11px;letter-spacing:1.5px;font-weight:850}
+#reports .zm-report-heading h3{margin:0 0 9px;font-size:clamp(23px,2.5vw,28px);line-height:1.25;font-weight:800;letter-spacing:-.8px;color:#172231}
+#reports .zm-report-heading .zm-muted{margin:0;color:#728092;font-size:13px;max-width:680px;line-height:1.8}
+#reports .zm-report-controls{
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);
+  gap:17px;align-items:stretch;margin:25px 0 0;padding:22px;
+  background:#fff8f3;border:1px solid #f0e1d7;border-radius:16px;
+}
+#reports .zm-report-field{display:flex;flex-direction:column;gap:9px;min-width:0}
+#reports .zm-report-field label{display:block;margin:0;color:#3e4c5b;font-size:12px;line-height:1.4;font-weight:750;letter-spacing:.1px}
+#reports .zm-report-field select{
+  display:block;box-sizing:border-box;width:100%;height:48px;min-height:48px;
+  border:1px solid #e5d4c9;border-radius:11px;background:#fffefd;
+  padding:0 14px;color:#172231;font:650 13px/1.5 Inter,"Segoe UI",Arial,sans-serif;
+  box-shadow:0 2px 4px rgba(50,30,20,.02);
+}
+#reports .zm-report-field select:hover{border-color:#cbad9e}
+#reports .zm-report-field select:focus-visible{outline:3px solid rgba(198,83,54,.3);outline-offset:2px;border-color:#bf5539}
+#reports .zm-report-actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:2px}
+#reports .zm-report-actions .zm-report-button.button{
+  box-sizing:border-box;appearance:none;display:inline-flex;align-items:center;justify-content:center;
+  width:100%;min-height:47px;margin:0;padding:12px 15px;
+  background:#c45335;color:#fff;border:1px solid #c45335;
+  border-radius:11px;box-shadow:0 3px 8px rgba(181,77,52,.12);
+  font:750 12px/1.4 Inter,"Segoe UI",Arial,sans-serif;
+  text-decoration:none;white-space:normal;text-align:center;
+  transition:background .18s,box-shadow .18s,transform .18s;
+}
+#reports .zm-report-actions .zm-report-button.button:not(:disabled):hover{
+  background:#a9432b;border-color:#a9432b;box-shadow:0 5px 12px rgba(181,77,52,.18);transform:translateY(-1px)
+}
+#reports .zm-report-actions .zm-report-button.button:focus-visible{outline:3px solid #e8a38c;outline-offset:3px}
+#reports .zm-report-actions .zm-report-button.button:disabled{
+  background:#dfb3a4;border-color:#dfb3a4;color:#fff;box-shadow:none;cursor:not-allowed;opacity:1;transform:none
+}
+#reports .zm-report-feedback{margin:14px 0 0;padding:12px 15px;border:1px solid #f0e3dc;border-radius:10px;background:#fff9f5;color:#758092;font-size:12px;line-height:1.7}
+#reports .zm-report-feedback:empty{display:none}
+#reports .zm-report-sheet{margin-top:20px}
+@media(max-width:780px){
+ #reports .zm-report-controls{grid-template-columns:1fr;gap:15px;padding:17px}
+ #reports .zm-report-actions{grid-column:1;grid-template-columns:1fr 1fr}
+ #reports .zm-report-actions .zm-report-button:first-child{grid-column:1/-1}
+}
+@media(max-width:480px){
+ #reports.zm-report-card{padding:18px!important;border-radius:16px!important}
+ #reports .zm-report-actions{grid-template-columns:1fr;gap:10px}
+ #reports .zm-report-actions .zm-report-button:first-child{grid-column:1}
+}
+@media(prefers-reduced-motion:reduce){#reports .zm-report-button.button{transition:none}}

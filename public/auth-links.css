@@ -1,0 +1,72 @@
+/* Auth dialog matched to the approved Zrain Links authentication experience.
+   Intentionally scoped to auth-dialog to preserve Monitor dashboard styles. */
+.auth-dialog.dialog{
+  width:min(460px,calc(100vw - 28px));max-width:calc(100vw - 28px);
+  max-height:min(690px,calc(100dvh - 32px));margin:auto;
+  padding:22px 26px 20px;overflow-y:auto;
+  background:#fffdfb;border:1px solid #eaded7;border-radius:20px;
+  box-shadow:0 24px 65px rgba(27,39,53,.28);color:#1b2735;
+}
+.auth-dialog::backdrop{background:#17212ab0;backdrop-filter:blur(3px)}
+.auth-dialog [hidden],.connect-google-panel[hidden]{display:none!important}
+.auth-dialog .dialog-top{display:flex;align-items:center;justify-content:space-between;min-height:30px}
+.auth-dialog .brand-logo-image{object-fit:contain;width:38px;height:38px}
+.auth-dialog .dialog-close{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:8px;background:transparent;color:#677484;font-size:28px;line-height:1;cursor:pointer}
+.auth-dialog .dialog-close:hover{background:#fff0e7;color:#923720}
+.auth-dialog h2{margin:10px 0 3px;font-size:23px;letter-spacing:-.6px;line-height:1.25;color:#1b2735}
+.auth-dialog>p{font-size:12px;color:#73808b;margin:0 0 12px;line-height:1.5}
+.auth-dialog .auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-bottom:1px solid #eaded7;margin:15px 0 14px}
+.auth-dialog .auth-tabs button{appearance:none;text-align:center;min-height:40px;padding:9px 12px;border:0;border-bottom:2px solid transparent;background:transparent;color:#697787;font:800 13px Inter,'Segoe UI',Arial,sans-serif;cursor:pointer}
+.auth-dialog .auth-tabs button.active{color:#b64b31;border-color:#b64b31}
+.auth-dialog .auth-tabs button:not(.active):hover{color:#ba4d34}
+.auth-dialog form label{display:block;color:#253346;font-size:12px;font-weight:800;margin:0 0 5px}
+.auth-dialog form label small{font-size:10px;color:#697686;font-weight:500}
+.auth-dialog form input{
+  display:block;width:100%;height:42px;min-height:42px;
+  padding:9px 12px;margin:0 0 11px;border:1px solid #d7dce1;
+  border-radius:9px;background:#fff;color:#253346;font-size:13px;line-height:normal;
+}
+.auth-dialog form input:focus-visible{outline:3px solid #d3a18b;outline-offset:1px}
+.auth-dialog .password-row{position:relative}
+.auth-dialog .password-row input{padding-right:65px}
+.auth-dialog .password-row button{position:absolute;top:5px;right:8px;border:0;border-radius:7px;background:transparent;color:#ac4b34;font-size:11px;font-weight:800;min-width:48px;height:31px;cursor:pointer}
+.auth-dialog .auth-help{font-size:11px;line-height:1.55;color:#697686;margin:-7px 0 12px}
+.auth-dialog .forgot-password-row{display:flex;justify-content:flex-end;margin:-2px 0 10px}
+.auth-dialog .forgot-link{display:block;appearance:none;width:max-content;max-width:100%;border:0;border-radius:0;background:transparent;color:#ba4d34;font:700 12px/1.6 Inter,'Segoe UI',Arial,sans-serif;text-decoration:underline;text-underline-offset:3px;margin:0;padding:0;cursor:pointer}
+.auth-dialog .forgot-link:hover{color:#923720}
+.auth-dialog .form-message{font-size:12px;min-height:0;margin:4px 0 8px;line-height:1.4;color:#a94a37;overflow-wrap:anywhere}
+.auth-dialog .form-message:empty{display:none}
+.auth-dialog .form-message.ok{color:#26744b}
+.auth-dialog .auth-submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:46px;font-size:13px;border-radius:9px;background:#c45335;color:#fff}
+.auth-dialog .auth-submit:hover{background:#a84129}
+.auth-dialog .auth-submit:disabled,.auth-dialog .google-button:disabled{opacity:.65;cursor:wait}
+.auth-dialog .auth-divider{display:flex;align-items:center;gap:12px;margin:11px 0;color:#81909b;font-size:12px}
+.auth-dialog .auth-divider::before,.auth-dialog .auth-divider::after{content:"";flex:1;border-top:1px solid #eaded7}
+.auth-dialog .google-auth-section{width:100%}
+.auth-dialog .google-button{display:flex;width:100%;align-items:center;justify-content:center;min-height:46px;border-radius:9px;border:1px solid #747775;background:#fff;color:#1f1f1f;font:600 14px Inter,'Segoe UI',Arial,sans-serif;letter-spacing:0;gap:11px;padding:10px 14px;white-space:normal}
+.auth-dialog .google-button:hover{background:#f8f9fa;border-color:#747775}
+.auth-dialog .google-button:focus-visible{outline:3px solid #7396cc;outline-offset:2px}
+.auth-dialog .google-icon{width:20px;height:20px;flex:none}
+.auth-dialog .google-auth-section .form-message:not(:empty){margin:9px 0 4px;text-align:left}
+.auth-dialog .dialog-note{margin:11px 0 0!important;font-size:10px!important;line-height:1.6}
+.auth-dialog .verify-panel{margin-top:12px;border:1px solid #eedbcf;background:#fff0e5;border-radius:12px;padding:18px}
+.auth-dialog .verify-panel h3{font-size:17px;margin:0 0 5px}
+.auth-dialog .verify-panel p{font-size:12px;color:#5f7468;line-height:1.7}
+.auth-dialog .verify-panel strong{overflow-wrap:anywhere}
+.auth-dialog .verify-panel .button{width:100%;margin-top:10px}
+.auth-dialog .verify-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:13px}
+.auth-dialog .verify-actions button{background:none;border:0;padding:5px 0;color:#b75137;font-size:11px;font-weight:750;text-decoration:underline;cursor:pointer}
+.auth-dialog .reset-password-panel{padding-top:7px}
+.auth-dialog .reset-password-panel h3{font-size:18px;letter-spacing:-.35px;margin:5px 0}
+.auth-dialog .reset-password-panel>p{font-size:12px;color:#6d7885;line-height:1.6;margin:0 0 18px}
+.auth-dialog .reset-password-panel form{margin:0}
+.auth-dialog .back-to-signin,.auth-dialog .google-redirect{appearance:none;display:inline-flex;align-items:center;justify-content:center;padding:6px 3px;background:transparent;border:0;border-radius:5px;color:#b74d32;font-size:12px;line-height:1.5;font-weight:750;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.auth-dialog .back-to-signin{margin:13px 0 0}
+.auth-dialog .google-redirect{width:100%;margin-top:7px}
+.connect-google-panel{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #e8d7ca;background:#fff7f0;border-radius:12px;padding:14px 16px;margin:10px 0 17px}
+.connect-google-panel strong{font-size:13px}.connect-google-panel p{margin:4px 0 0;font-size:11px;color:#73808b}.connect-google-panel .form-message{flex-basis:100%;margin:0}
+@media(max-width:540px){.auth-dialog.dialog{width:calc(100vw - 20px);max-width:calc(100vw - 20px);max-height:calc(100dvh - 20px);padding:17px 19px;border-radius:16px}.auth-dialog h2{font-size:21px}.auth-dialog .auth-tabs{gap:3px}.auth-dialog .auth-tabs button{padding-inline:7px}}
+@media(prefers-reduced-motion:reduce){.auth-dialog{scroll-behavior:auto}}
+
+/* Explain safe account linking without changing the approved auth layout. */
+.auth-dialog .google-account-help{margin:8px 0 2px;color:#697686;font-size:11px;line-height:1.55}

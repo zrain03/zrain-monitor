@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff9f5"><meta name="description" content="Free public beta for website and API uptime monitoring. Track HTTPS checks, downtime, incident history, and optional Telegram alerts. Developed by Zrain.">
+  <link rel="canonical" href="https://zrain-monitor.web.app/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zrain Monitor">
+  <meta property="og:title" content="Zrain Monitor | Website &amp; API Uptime Monitoring">
+  <meta property="og:description" content="Monitor public HTTPS websites and APIs, review downtime incidents and choose optional Telegram alerts. Free public beta.">
+  <meta property="og:url" content="https://zrain-monitor.web.app/">
+  <meta property="og:image" content="https://zrain-monitor.web.app/zrain-logo.webp">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zrain Monitor | Website &amp; API Uptime Monitoring">
+  <title>Zrain Monitor | Website &amp; API Uptime Monitoring</title>
+  <link rel="icon" href="/zrain-logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css"><link rel="stylesheet" href="/style.css?v=1.0.9">
+  <link rel="stylesheet" href="/monitor-report.css?v=1.0.12">
+  <link rel="stylesheet" href="/monitor-report-ui-v1.0.13.2.css">
+  <link rel="stylesheet" href="/monitor-report-print-v1.0.14.3.css"><link rel="stylesheet" href="/auth-links.css?v=1.0.3">
+  <script type="module" src="/zrain-ui-config.js"></script>
+  <script type="module" src="/app.js?v=1.0.21.0"></script>
+  <script type="module" src="/monitor-scrollspy.js?v=1.0.5"></script>
+  <link rel="stylesheet" href="/monitor-report-brand-v1.0.14.6.css">
+  <link rel="stylesheet" href="/monitor-report-public-v1.0.15.2.css">
+  <link rel="stylesheet" href="/settings-experience-v1.css?v=1.0.18.0">
+  <link rel="stylesheet" href="/notification-card-v1.css?v=1.0.19.0">
+  <link rel="stylesheet" href="/public-clarity-v1.css?v=1.0.20.0">
+  <link rel="stylesheet" href="/reliability-v1.css?v=1.0.21.0">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zrain Monitor",
+  "url": "https://zrain-monitor.web.app/",
+  "description": "Free public beta website and API uptime monitoring for approved public HTTPS endpoints. Scheduled checks, status history, confirmed downtime incidents, and optional Telegram alerts.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web browser",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "Zrain",
+    "url": "https://zrain.web.app/"
+  },
+  "featureList": [
+    "Website and API uptime checks",
+    "Keep-Awake periodic HTTPS requests",
+    "Downtime and recovery incident history",
+    "Optional Telegram downtime and recovery notifications"
+  ]
+}
+  </script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="zrain-header">
+  <div class="zrain-header__inner">
+    <div class="zrain-brand"><a class="zrain-brand__home" href="https://zrain.web.app"><img class="zrain-brand__logo" src="/zrain-logo.webp" alt="" width="42" height="42"><strong>Zrain</strong></a> <a class="zrain-brand__product" href="/">Monitor</a></div>
+    <nav class="topnav" aria-label="Navigation"><a href="#dashboard" class="current" data-view="overview" aria-current="location">Overview</a><a href="#monitors" data-view="monitors">Monitors</a><a href="#incidents" data-view="incidents">Incidents</a><a href="#settings" data-view="settings">Settings</a><a href="#system" data-view="system" hidden>System Health</a></nav>
+    <div class="account-actions"><span id="account-email" hidden></span><button class="button button-outline" id="auth-open" type="button">Sign in</button><button class="button button-outline" id="signout" hidden>Sign out</button></div>
+  </div>
+</header>
+<main id="main" class="container">
+  <section class="hero" id="hero">
+        <div class="hero-text"><p class="eyebrow">ZRAIN MONITOR / FREE PUBLIC BETA</p><h1>Website &amp; API<br><em>uptime monitoring.</em></h1><p>Monitor public HTTPS websites and APIs with approximately five-minute checks. Understand confirmed downtime and recovery, review incident history, and receive optional Telegram alerts. Keep-Awake requests can help reduce inactivity sleep on some hosts but cannot guarantee availability.</p>
+      <div class="hero-actions"><button id="hero-start" class="button button-primary" type="button">Get started <span aria-hidden="true">&#8599;</span></button><a class="button button-outline clarity-how-link" href="/how-it-works.html">How it works <span aria-hidden="true">&#8599;</span></a><span class="quiet-pill">5-minute checks / Public beta</span></div>
+      <div class="hero-points"><span>Uptime checks</span><span>Keep-Awake</span><span>Incident history</span><span>Telegram alerts</span></div>
+      <p class="clarity-fineprint">Checks are best-effort, not a continuous uptime guarantee. Current beta limits and supported services are explained in <a href="/how-it-works.html#limits">How it works</a>.</p>
+    </div>
+
+    <div class="hero-illustration" aria-hidden="true"><div class="service-strip"><span class="status-bead"></span><div><strong>Services looking good</strong><small>Monitoring with care</small></div><span class="little-check">✓</span></div><div class="heartbeat"><svg viewBox="0 0 380 120" preserveAspectRatio="none"><path d="M0 72H75L95 72L113 25L132 101L153 56L177 72H214L234 27L249 88L270 65L291 72H380" fill="none" stroke="#c45335" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="hero-statuses"><span><i></i> UP</span><span><i></i> MONITORING</span><span><i></i> ONLINE</span></div></div>
+  </section>
+  <div id="banner" class="notice" role="status" aria-live="polite" hidden></div>
+  <section id="dashboard" hidden>
+    <div class="section-title"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>Overview</h2><p>Monitor your services, even when this tab is closed.</p></div><button id="add-open" class="button button-primary" type="button">+ Add monitor</button></div>
+    <div class="summary-grid"><article class="metric"><span>Healthy</span><strong id="metric-up">0</strong><small>Responsive monitors</small></article><article class="metric"><span>Down</span><strong id="metric-down">0</strong><small>Confirmed incidents</small></article><article class="metric"><span>Verifying</span><strong id="metric-verifying">0</strong><small>Pending confirmation</small></article><article class="metric"><span>Paused / Unknown</span><strong id="metric-other">0</strong><small>Not reporting UP</small></article></div>
+    <details class="monitor-getting-started"><summary>New here? How monitoring and Telegram alerts work</summary><ol><li><strong>Add a monitor:</strong> Enter a public HTTPS website or API address. Checks run approximately every 5 minutes.</li><li><strong>Connect Telegram:</strong> Open Account & notifications → Telegram alerts, use the secure bot link and confirm the connection.</li><li><strong>Choose a website:</strong> Select its name in Active monitors below, then enable Telegram alerts in Monitor details.</li><li><strong>Get updates:</strong> Confirmed downtime and recovery appear in Event history. Telegram messages are optional and require an enabled monitor.</li></ol></details><p class="clarity-dashboard-help">Need an explanation of UP, VERIFYING, DOWN, UNKNOWN or Keep-Awake? <a href="/how-it-works.html#status">Read the monitoring guide</a>.</p><p id="capacity-info" class="capacity-info" role="status" aria-live="polite">Beta capacity loads after signing in.</p><section id="overview" class="section-block"><div class="section-title compact"><div><h2>Active monitors</h2><p>Select a website name below to open its details, history and alert settings.</p></div><button class="button button-outline" id="refresh-all">Refresh</button></div><div id="monitor-list" class="monitor-list"><div class="empty-state">Sign in to see your monitors.</div></div></section>
+    <section id="monitors" class="section-block"><div class="section-title compact"><div><h2>Monitor details</h2><p>Choose a website from <strong>Active monitors</strong> above to manage it and turn on alerts.</p></div></div><div id="monitor-detail" class="detail-card"><div class="empty-state">No monitor selected.</div></div></section>
+    <section id="incidents" class="section-block"><div class="section-title compact"><div><h2>Event history</h2><p>Confirmed DOWN and RECOVERED events appear here. Telegram alerts can also notify you when this page is closed.</p></div><button class="button button-outline" id="mark-read">Mark all as read</button></div><div id="notification-list" class="event-list"><div class="empty-state">No notifications yet.</div></div></section>
+    <section id="settings" class="section-block"><div class="section-title compact"><div><h2>Account & notifications</h2><p>Manage your profile and choose how to receive service alerts.</p></div></div><div class="settings-card settings-layout"><section class="settings-panel settings-account" aria-labelledby="settings-account-title"><div class="settings-panel-heading"><div><span class="settings-kicker">ACCOUNT</span><h3 id="settings-account-title">Your account</h3><p>Signed-in email address</p></div></div><div class="account-identity" aria-label="Account email"><span class="account-identity-label">ACCOUNT EMAIL</span><p id="settings-email" class="account-identity-email">Signed out</p></div><div id="connect-google-panel" class="connect-google-panel" hidden><div><strong>Connect Google to this account</strong><p>Keep your existing monitors and administrator access when signing in with Google.</p></div><button id="connect-google" class="button button-outline" type="button">Connect Google</button><p id="connect-google-message" class="form-message" role="status" aria-live="polite"></p></div></section><section class="settings-panel settings-telegram" aria-labelledby="telegram-title"><div class="settings-panel-heading"><div><span class="settings-kicker">NOTIFICATIONS</span><h3 id="telegram-title">Telegram alerts</h3><p>Get an alert when a website goes DOWN or RECOVERED. Free and optional.</p></div></div><ol class="telegram-steps" aria-label="Set up Telegram notifications"><li><strong>Connect Telegram</strong><span>Link your Telegram chat to this Zrain Monitor account.</span></li><li><strong>Confirm connection</strong><span>Tap Start in Telegram, return here, then check the connection.</span></li><li><strong>Enable alerts</strong><span>In Active monitors, select your website and enable Telegram alerts for it.</span></li></ol><div id="telegram-settings" class="telegram-settings" aria-live="polite"><p class="muted small">Telegram connection options load after signing in.</p></div></section><section class="settings-panel settings-danger" aria-labelledby="settings-danger-title"><div class="settings-danger-copy"><span class="settings-kicker">ACCOUNT CONTROL</span><h3 id="settings-danger-title">Delete account & data</h3><p>Permanently deletes your monitors, check history, incidents and notifications. You may need to sign in again to confirm.</p></div><div class="setting-actions"><button id="delete-data" class="button button-outline danger" type="button">Delete monitor data & account</button></div></section></div><p class="settings-footnote">Questions about your data? <a href="/privacy.html">Read the Privacy Policy</a>. Need help connecting Telegram? <a href="/how-it-works.html#telegram">Read the Telegram setup guide</a>.</p></section>
+    <section id="system" class="section-block" hidden><div class="section-title compact"><div><h2>System Health</h2><p>Administrator-only database, Cron and monitoring diagnostics.</p></div><button class="button button-outline" id="refresh-system">Refresh diagnostics</button></div><div class="detail-card" id="system-content">Loading…</div></section>
+  </section>
+  <section id="signedout" class="features" aria-label="Zrain Monitor features"><article><div class="feature-icon">↗</div><h3>Reliable visibility</h3><p>Track actual checks and understand when data is stale instead of trusting outdated green badges.</p></article><article><div class="feature-icon">♡</div><h3>Keep-Awake checks</h3><p>Periodic HTTPS requests help reduce inactivity sleep on some free hosting platforms.</p></article><article><div class="feature-icon">▥</div><h3>Incident history</h3><p>Two consecutive failures confirm downtime. Recovery is confirmed before an incident is closed.</p></article></section>
+  <div class="clarity-public-link"><strong>New to website monitoring?</strong><span>Learn the differences between Uptime, Keep-Awake, a confirmed incident and a Telegram alert before you register.</span><a href="/how-it-works.html">Read the complete guide and FAQs</a></div>
+</main>
+<dialog id="auth-dialog" class="dialog auth-dialog" aria-labelledby="auth-heading">
+  <div class="dialog-top">
+    <img src="/zrain-logo.webp" class="brand-logo-image" alt="" width="38" height="38">
+    <button type="button" class="dialog-close" data-close="auth-dialog" aria-label="Close sign in">×</button>
+  </div>
+  <h2 id="auth-heading">Welcome back</h2>
+  <p id="auth-caption">Sign in to manage your monitors.</p>
+
+  <section id="verification-panel" class="verify-panel" hidden aria-labelledby="verify-title">
+    <h3 id="verify-title">Verify your email</h3>
+    <p>The email address <strong id="verify-email"></strong> is not verified yet. Select <strong>Send verification email</strong> below to request a link, then check your inbox and spam folder.</p>
+    <p id="verification-message" class="form-message" role="status" aria-live="polite"></p>
+    <button id="verified-button" type="button" class="button button-primary auth-submit">I've verified my email →</button>
+    <div class="verify-actions">
+      <button id="resend-verification" type="button">Send verification email</button>
+      <button id="switch-account" type="button">Use another account</button>
+    </div>
+  </section>
+
+  <section id="reset-password-panel" class="reset-password-panel" hidden aria-labelledby="reset-title">
+    <h3 id="reset-title">Reset your password</h3>
+    <p>Enter your account email. We'll send a link to create a new password.</p>
+    <form id="reset-password-form">
+      <label for="reset-email">Email address</label>
+      <input id="reset-email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+      <p id="reset-message" class="form-message" role="status" aria-live="polite"></p>
+      <button id="reset-submit" class="button button-primary auth-submit" type="submit">Send reset link</button>
+    </form>
+    <button id="back-to-signin" class="back-to-signin" type="button">← Back to sign in</button>
+  </section>
+
+  <div id="auth-tabs" class="auth-tabs" role="group" aria-label="Authentication mode">
+    <button id="signin-tab" type="button" data-auth-mode="signin" class="active" aria-pressed="true">Sign in</button>
+    <button id="signup-tab" type="button" data-auth-mode="signup" aria-pressed="false">Create account</button>
+  </div>
+  <form id="auth-form">
+    <div id="signup-name-section" hidden>
+      <label for="full-name">Full name</label>
+      <input id="full-name" type="text" autocomplete="name" maxlength="80" placeholder="Your full name" disabled>
+    </div>
+    <label for="auth-email">Email address</label>
+    <input id="auth-email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
+    <label for="auth-password">Password <small id="password-hint"></small></label>
+    <div class="password-row">
+      <input id="auth-password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+      <button type="button" id="toggle-password" aria-label="Show password" aria-pressed="false">Show</button>
+    </div>
+    <p id="password-guidance" class="auth-help" hidden>Use at least 12 characters. A longer, unique password is more secure.</p>
+    <div id="confirm-password-section" hidden>
+      <label for="confirm-password">Confirm password</label>
+      <div class="password-row">
+        <input id="confirm-password" type="password" autocomplete="new-password" placeholder="Re-enter your password" disabled>
+        <button type="button" id="toggle-confirm-password" aria-label="Show confirmation password" aria-pressed="false">Show</button>
+      </div>
+    </div>
+    <div id="forgot-password-row" class="forgot-password-row"><button type="button" id="reset-password" class="forgot-link">Forgot password?</button></div>
+    <p id="auth-message" class="form-message" role="status" aria-live="polite"></p>
+    <button class="button button-primary auth-submit" type="submit" id="auth-submit">Sign in →</button>
+  </form>
+  <div id="google-auth-section" class="google-auth-section">
+    <div class="auth-divider" aria-hidden="true"><span>or continue with</span></div>
+    <button id="google-login" type="button" class="button google-button">
+      <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20" aria-hidden="true" focusable="false">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.3 5.48-4.87 7.18l7.73 6C44.31 38.03 46.98 31.88 46.98 24.55z"/>
+        <path fill="#FBBC05" d="M10.53 28.59A14.41 14.41 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.2A23.87 23.87 0 0 0 0 24c0 3.87.93 7.51 2.56 10.78l7.97-6.19C6.51 42.62 14.62 48 24 48z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.73-6c-2.15 1.45-4.92 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+      </svg>
+      <span id="google-label">Continue with Google</span>
+    </button>
+    <p id="google-message" class="form-message" role="status" aria-live="polite"></p>
+    <p class="google-account-help">Already have an email/password account? Sign in with it first, then use <strong>Settings &gt; Connect Google</strong> to keep the same account and monitor data.</p>
+    <button id="google-redirect" type="button" class="google-redirect" hidden>Google popup not working? Continue in this tab</button>
+  </div>
+  <p class="dialog-note">Your Zrain Monitor account keeps your monitoring data private to you. Sign in with a verified account to create up to 3 monitors for approved public HTTPS websites and APIs.</p>
+</dialog>
+<dialog id="create-dialog" class="dialog" aria-labelledby="create-heading"><div class="modal-heading"><div><p class="eyebrow">NEW MONITOR</p><h2 id="create-heading">Monitor a service</h2></div><button class="close" data-close="create-dialog" aria-label="Close">×</button></div><form id="create-form"><label>Monitor name<input id="create-name" type="text" minlength="2" maxlength="70" required placeholder="My Website or API"></label><label>Public HTTPS URL<input id="create-url" type="url" required placeholder="https://example.onrender.com/health"></label><label>Purpose<select id="create-purpose"><option value="uptime">Uptime Monitoring</option><option value="keepawake">Keep-Awake Monitoring</option></select></label><div class="info-card">Checks run approximately every 5 minutes. Requests cannot guarantee that hosting will never restart or sleep. Beta monitors are limited to approved public HTTPS providers.</div><p id="create-message" class="form-message" role="status"></p><button type="submit" class="button button-primary full" id="create-submit">Create monitor</button></form></dialog>
+<footer class="zrain-footer"><div class="zrain-footer__inner"><div class="zrain-footer__identity"><a href="https://zrain.web.app" class="zrain-footer__home"><img src="/zrain-logo.webp" class="zrain-footer__logo" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a></div><div class="zrain-footer__links"><a href="/how-it-works.html">How it works</a><a href="/privacy.html">Privacy</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div></div></footer>
+</body></html>

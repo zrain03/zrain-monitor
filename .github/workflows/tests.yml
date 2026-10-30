@@ -1,0 +1,19 @@
+name: Zrain Monitor Tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --ignore-scripts
+      - run: npm run test:release
+      - run: node --check src/api.js
+      - run: node --check src/telegram-alerts.js
+      - run: node --check src/engine.js

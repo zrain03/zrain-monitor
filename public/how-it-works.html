@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="How Zrain Monitor works: uptime checks, Keep-Awake, status definitions, incident history, Telegram alerts, supported HTTPS domains, limits and FAQs.">
+  <title>How Zrain Monitor Works | Uptime, Keep-Awake &amp; Telegram Alerts</title>
+  <link rel="canonical" href="https://zrain-monitor.web.app/how-it-works.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Zrain Monitor">
+  <meta property="og:title" content="How Zrain Monitor Works">
+  <meta property="og:description" content="Clear answers about uptime checks, status changes, Keep-Awake limitations, Telegram alerts and the free public beta.">
+  <meta property="og:url" content="https://zrain-monitor.web.app/how-it-works.html">
+  <meta property="og:image" content="https://zrain-monitor.web.app/zrain-logo.webp">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/zrain-logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css?v=brand-20261029-footeronly">
+  <link rel="stylesheet" href="/public-clarity-v1.css?v=1.0.20.0">
+</head>
+<body class="clarity-page">
+<a class="clarity-skip" href="#main">Skip to content</a>
+<header class="zrain-header">
+  <div class="zrain-header__inner">
+    <div class="zrain-brand"><a class="zrain-brand__home" href="https://zrain.web.app/" aria-label="Zrain ecosystem home"><img class="zrain-brand__logo" src="/zrain-logo.webp" alt="" width="42" height="42"><strong class="zrain-brand__name">Zrain</strong></a><a class="zrain-brand__product" href="/">Monitor</a></div>
+    <nav class="clarity-header-nav" aria-label="Site navigation"><a href="/">Open Monitor</a><a href="/how-it-works.html" aria-current="page">How it works</a><a href="/privacy.html">Privacy</a></nav>
+  </div>
+</header>
+<main id="main" class="clarity-main">
+  <div class="clarity-breadcrumb"><a href="/">Zrain Monitor</a><span aria-hidden="true">/</span>How it works</div>
+  <section class="clarity-hero" aria-labelledby="guide-title">
+    <p class="clarity-eyebrow">THE OFFICIAL GUIDE / PUBLIC BETA</p>
+    <h1 id="guide-title">Website monitoring,<br><em>explained simply.</em></h1>
+    <p>Zrain Monitor is a free public beta service developed by Zrain. It checks approved public HTTPS websites and APIs, records response times and incidents, and can send optional Telegram messages for confirmed downtime and recovery. It also supports Keep-Awake requests for some inactivity-based hosts.</p>
+    <div class="clarity-hero-actions"><a class="clarity-button-primary" href="/">Open Zrain Monitor</a><a class="clarity-button-secondary" href="#getting-started">How to get started</a></div>
+  </section>
+  <nav class="clarity-jump" aria-label="Guide topics"><a href="#features">Features</a><a href="#status">Status meanings</a><a href="#getting-started">Getting started</a><a href="#telegram">Telegram alerts</a><a href="#limits">Limits &amp; safety</a><a href="#faq">FAQs</a></nav>
+  <section id="features" class="clarity-section" aria-labelledby="features-title"><p class="clarity-eyebrow">01 / WHAT IT DOES</p><h2 id="features-title">Three features, three different purposes.</h2>
+    <div class="clarity-grid">
+      <article class="clarity-card"><h3>Uptime Monitoring</h3><p>Sends a GET request to the HTTPS URL you register, usually about every five minutes. A 2xx HTTP response counts as a successful check. Other HTTP responses, timeouts and network errors count as failed checks. It records timings and check results.</p></article>
+      <article class="clarity-card"><h3>Keep-Awake</h3><p>Sends the same periodic HTTPS check to help reduce inactivity-based sleeping on certain hosting providers. It cannot prevent scheduled restarts, outages, quota limits or other causes of unavailability. This is not a hosting service or a guarantee of continuous uptime.</p></article>
+      <article class="clarity-card"><h3>Incident history &amp; alerts</h3><p>Confirmed DOWN and RECOVERED changes create incidents and private in-app event notifications. Optional Telegram messages are sent only after you connect your Telegram account and enable alerts for each selected monitor.</p></article>
+    </div>
+    <p class="clarity-note">The monitor checks whether your endpoint responds with HTTP 2xx. It does not verify that your application features, database or login process are working correctly unless your chosen endpoint reports their health accurately.</p>
+  </section>
+  <section id="status" class="clarity-section" aria-labelledby="status-title"><p class="clarity-eyebrow">02 / UNDERSTAND YOUR DASHBOARD</p><h2 id="status-title">What do UP, VERIFYING, DOWN, UNKNOWN and PAUSED mean?</h2>
+    <div class="clarity-status-grid">
+      <div><strong class="clarity-status is-up">UP</strong><p>The latest check succeeded and the result is recent. A new monitor can show UP after its first successful check.</p></div>
+      <div><strong class="clarity-status is-verifying">VERIFYING</strong><p>A recent check failed, but the monitor has not yet recorded two consecutive failures to confirm downtime.</p></div>
+      <div><strong class="clarity-status is-down">DOWN</strong><p>Two consecutive failed checks confirmed an incident. While DOWN, two consecutive successful checks are required to mark it RECOVERED and return to UP.</p></div>
+      <div><strong class="clarity-status is-unknown">UNKNOWN</strong><p>No sufficiently recent check is available. If the last check is 15 minutes old or older, the dashboard avoids presenting stale UP status as current.</p></div>
+      <div><strong class="clarity-status is-paused">PAUSED</strong><p>You paused this monitor. Scheduled checks do not continue until the monitor is resumed.</p></div>
+    </div>
+    <p class="clarity-note">A manual “Check now” action is subject to a five-minute cooldown. Scheduled checks are best-effort and can be delayed by cloud platform limits.</p>
+  </section>
+  <section id="getting-started" class="clarity-section" aria-labelledby="start-title"><p class="clarity-eyebrow">03 / FIRST-TIME SETUP</p><h2 id="start-title">Start monitoring in four simple steps.</h2>
+    <ol class="clarity-steps"><li><strong>Create or sign in to your account.</strong><span>Use Firebase Authentication on the Zrain Monitor website. Your monitors and history are private to your account.</span></li><li><strong>Choose Add monitor.</strong><span>Give it a clear name, enter a supported public HTTPS URL, and choose Uptime Monitoring or Keep-Awake. The first check is queued.</span></li><li><strong>Inspect your monitor.</strong><span>Under Active monitors, select its name to open Monitor details. Review the status, response time, recent checks and incident history.</span></li><li><strong>Optional: enable Telegram alerts.</strong><span>Connect Telegram in Account &amp; notifications, check the connection, return to Active monitors, select a monitor and enable alerts in Notification settings.</span></li></ol>
+  </section>
+  <section id="telegram" class="clarity-section" aria-labelledby="telegram-title"><p class="clarity-eyebrow">04 / OPTIONAL NOTIFICATIONS</p><h2 id="telegram-title">How Telegram alerts work</h2>
+    <div class="clarity-card"><ol class="clarity-small-steps"><li>Sign in to Zrain Monitor, open <strong>Account &amp; notifications</strong> and select <strong>Connect Telegram</strong>.</li><li>Open the generated single-use link to <a href="https://t.me/ZrainMonitorAlertsBot" rel="noopener noreferrer" target="_blank">@ZrainMonitorAlertsBot</a>. Within 10 minutes, tap <strong>Start</strong> in Telegram.</li><li>Return to the website and select <strong>Check connection</strong>. It verifies the bot connection, but does not turn on alerts by itself.</li><li>Under <strong>Active monitors</strong>, select the desired monitor name. In its <strong>Notification settings</strong>, select <strong>Enable Telegram alerts</strong>. Repeat for other monitors you choose.</li></ol>
+      <p><strong>When are messages sent?</strong> After DOWN is confirmed and after RECOVERED is confirmed, not on every check. Event history in the dashboard works independently of Telegram.</p>
+      <p><strong>How to stop alerts?</strong> Disable Telegram alerts for a monitor, disconnect your Telegram account in Settings or send <code>/stop</code> to the bot. Alert delivery may be delayed or fail if the messaging platform is unavailable.</p>
+      <p class="clarity-note">Zrain Monitor's Telegram channel is free and optional. Email incident alerts require a separately configured email provider and are not presented as an active public beta feature.</p>
+    </div>
+  </section>
+  <section id="limits" class="clarity-section" aria-labelledby="limits-title"><p class="clarity-eyebrow">05 / IMPORTANT LIMITATIONS</p><h2 id="limits-title">What the free public beta supports</h2>
+    <div class="clarity-grid clarity-grid-two"><article class="clarity-card"><h3>Supported monitoring URLs</h3><p>Only public HTTPS URLs on approved platforms (including Render, Firebase Hosting, Cloudflare Pages/Workers, Vercel and Netlify) or explicitly allowed hosts. Private addresses, localhost, credentials, custom ports and unsafe destinations are rejected. Redirect responses are not automatically followed.</p></article><article class="clarity-card"><h3>Account and capacity limits</h3><p>The current public beta is configured for up to 3 monitors per account and up to 12 monitors globally. Capacity is limited and may prevent new registrations even when you have fewer than three monitors. Limits may change.</p></article><article class="clarity-card"><h3>Check and data retention</h3><p>Checks are scheduled about every five minutes, not guaranteed at an exact second. Detailed check history is maintained for approximately 30 days, and daily summaries for approximately 90 days, subject to cleanup and service limits.</p></article><article class="clarity-card"><h3>Privacy and account deletion</h3><p>Monitoring data is private to the account owner. Firebase handles sign-in and Cloudflare handles checks and storage. Telegram processing only applies if you opt in. Delete your monitors and account in Settings or read the <a href="/privacy.html">Privacy Policy</a>.</p></article></div>
+  </section>
+  <section id="faq" class="clarity-section" aria-labelledby="faq-title"><p class="clarity-eyebrow">06 / COMMON QUESTIONS</p><h2 id="faq-title">Frequently asked questions</h2>
+    <div class="clarity-faq">
+      <details><summary>Is Zrain Monitor a web hosting service?</summary><p>No. It checks the availability of a website or API hosted elsewhere. It does not host, repair or automatically restart your application.</p></details>
+      <details><summary>Will Keep-Awake guarantee my backend never sleeps?</summary><p>No. Requests may help with inactivity-based sleeping on some providers, but hosting limitations, maintenance, downtime and account quotas still apply.</p></details>
+      <details><summary>Why does the dashboard show VERIFYING rather than DOWN?</summary><p>One failed check is not enough to confirm downtime. A second consecutive failure confirms DOWN and creates an incident. This reduces alerts from isolated failures.</p></details>
+      <details><summary>Why is my monitor UNKNOWN even though it previously showed UP?</summary><p>A prior green result is not proof of current availability. When the latest check is missing or stale (15 minutes or more), the display changes to UNKNOWN.</p></details>
+      <details><summary>Why didn't I get a Telegram message?</summary><p>Confirm that your Telegram account is connected, the specific monitor has Telegram alerts enabled, and the status changed to confirmed DOWN or RECOVERED. Normal checks and the Check connection action do not send incident notifications.</p></details>
+      <details><summary>Can I monitor any URL?</summary><p>No. During the public beta, only approved public HTTPS hosting domains and explicitly allowed hosts are supported. The service rejects unsafe or private destinations.</p></details>
+      <details><summary>Is Zrain Monitor always available and are checks real time?</summary><p>No. It is a best-effort cloud service subject to free-tier limits, platform disruptions and scheduling delays. Checks are approximately every five minutes, not continuous.</p></details>
+      <details><summary>How can I remove my monitoring data?</summary><p>Sign in, open Account &amp; notifications and use Delete monitor data &amp; account. For assistance, email <a href="mailto:zrain.dev@gmail.com">zrain.dev@gmail.com</a>. Review the <a href="/privacy.html">Privacy Policy</a> for details.</p></details>
+    </div>
+  </section>
+  <section class="clarity-cta"><h2>Ready to monitor your first website?</h2><p>Start with a supported public HTTPS endpoint and enable optional alerts when you are ready.</p><a class="clarity-button-primary" href="/">Open Zrain Monitor</a></section>
+</main>
+<footer class="zrain-footer"><div class="zrain-footer__inner"><div class="zrain-footer__identity"><a href="https://zrain.web.app/" class="zrain-footer__home"><img src="/zrain-logo.webp" alt="" class="zrain-footer__logo" width="38" height="38"><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a></div><div class="zrain-footer__links"><a href="/">Monitor</a><a href="/how-it-works.html" aria-current="page">How it works</a><a href="/privacy.html">Privacy</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div></div></footer>
+</body>
+</html>

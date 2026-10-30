@@ -1,0 +1,53 @@
+/* Zrain Monitor print-only corrections v1.0.14.3.
+   The original v1.0.13.2 stylesheet remains intact. */
+@media print {
+  /* The dashboard overview heading and metric tiles are direct children of
+     #dashboard, not .section-block. Hide them only during report printing. */
+  body.zm-print-report #dashboard > .section-title,
+  body.zm-print-report #dashboard > .summary-grid,
+  body.zm-print-report #overview,
+  body.zm-print-report #incidents,
+  body.zm-print-report #settings,
+  body.zm-print-report #system { display: none !important; }
+
+  /* Print the report sheet only. Do not alter the interactive dashboard UI. */
+  body.zm-print-report #monitors > :not(#reports),
+  body.zm-print-report #reports > :not(#zm-report-output) { display: none !important; }
+  body.zm-print-report #reports,
+  body.zm-print-report #zm-report-output,
+  body.zm-print-report .zm-report-sheet {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Allocate enough space for "Successful" without splitting the word. */
+  body.zm-print-report .zm-report-sheet table {
+    width: 100% !important;
+    table-layout: auto !important;
+    font-size: 11px !important;
+  }
+  body.zm-print-report .zm-report-sheet th,
+  body.zm-print-report .zm-report-sheet td {
+    padding: 9px 6px !important;
+  }
+  body.zm-print-report .zm-report-sheet th:nth-child(2),
+  body.zm-print-report .zm-report-sheet td:nth-child(2) {
+    min-width: 75px !important;
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+  body.zm-print-report .zm-report-sheet th:nth-child(3),
+  body.zm-print-report .zm-report-sheet td:nth-child(3),
+  body.zm-print-report .zm-report-sheet th:nth-child(5),
+  body.zm-print-report .zm-report-sheet td:nth-child(5) {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+  }
+  body.zm-print-report .zm-report-sheet .zm-report-table-scroll {
+    overflow: visible !important;
+  }
+}

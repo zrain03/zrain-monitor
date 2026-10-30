@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Learn how Zrain Monitor stores account details, website checks, incident history, and optional Telegram alert connections.">
+  <link rel="canonical" href="https://zrain-monitor.web.app/privacy.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Zrain Monitor Privacy Policy">
+  <meta property="og:description" content="How account information, public HTTPS monitor URLs and optional Telegram alerts are processed.">
+  <meta property="og:url" content="https://zrain-monitor.web.app/privacy.html">
+  <title>Privacy Policy | Zrain Monitor</title>
+  <link rel="icon" href="/zrain-logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/brand.css?v=brand-20261029-footeronly">
+  <link rel="stylesheet" href="/privacy-policy.css?v=1.0.11">
+</head>
+<body data-zrain-policy-layout="links-v1">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar zrain-header">
+  <div class="container topbar-inner zrain-header__inner">
+    <div class="brand zrain-brand">
+      <a class="zrain-brand__home" href="https://zrain.web.app" aria-label="Zrain ecosystem home"><img src="/zrain-logo.webp" class="brand-logo-image zrain-brand__logo" alt="" width="42" height="42"><strong class="zrain-brand__name">Zrain</strong></a>
+      <a class="zrain-brand__product" href="/" aria-label="Zrain Monitor home">Monitor</a>
+    </div>
+    <nav class="topnav" aria-label="Site navigation">
+      <a href="/">Overview</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a class="current" href="/privacy.html" aria-current="page">Privacy Policy</a>
+    </nav>
+    <div class="account-actions"><a class="button button-outline policy-header-action" href="/">Open Monitor <span aria-hidden="true">&nearr;</span></a></div>
+  </div>
+</header>
+<main class="container policy-page" id="main">
+  <div class="policy-breadcrumb"><a href="/">Zrain Monitor</a><span aria-hidden="true">/</span><span>Privacy Policy</span></div>
+  <section class="policy-hero" aria-labelledby="policy-title">
+    <div class="policy-hero-copy">
+      <p class="policy-eyebrow">&#10022; PRIVACY &amp; TRUST</p>
+      <h1 id="policy-title">Your privacy,<br><em>clearly explained.</em></h1>
+      <p class="policy-subtitle">How Zrain Monitor handles account information and the URLs you choose to monitor.</p>
+      <div class="policy-date"><span class="policy-date-icon" aria-hidden="true">&#10003;</span><span>Last updated <strong>30 October 2026</strong></span></div>
+    </div>
+    <div class="policy-hero-art" aria-hidden="true">
+      <div class="policy-visual-card">
+        <div class="policy-visual-top"><span>&#10022; ZRAIN MONITOR</span><span class="policy-visual-dots"><i></i><i></i><i></i></span></div>
+        <div class="policy-shield"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 6 51 13v16c0 13-7.8 21.5-19 28C20.8 50.5 13 42 13 29V13L32 6Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="m24 31 5.5 5.5L41 25" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <strong>Privacy first.</strong><span>Clear policies for your monitoring workspace.</span>
+        <div class="policy-visual-foot"><i></i> Zrain Monitor</div>
+      </div>
+    </div>
+  </section>
+  <div class="policy-layout">
+    <aside class="policy-sidebar" aria-label="Privacy policy navigation">
+      <div class="policy-sidebar-card">
+        <p class="policy-side-label">IN THIS POLICY</p>
+        <nav class="policy-toc" aria-label="On this page">
+        <a href="#policy-section-1"><span class="policy-index">01</span><span>Information stored</span></a>
+        <a href="#policy-section-2"><span class="policy-index">02</span><span>Why we use this information</span></a>
+        <a href="#policy-section-3"><span class="policy-index">03</span><span>Storage and processors</span></a>
+        <a href="#policy-section-4"><span class="policy-index">04</span><span>Retention</span></a>
+        <a href="#policy-section-5"><span class="policy-index">05</span><span>Deletion</span></a>
+        <a href="#policy-section-6"><span class="policy-index">06</span><span>Limitations</span></a>
+        <a href="#policy-section-7"><span class="policy-index">07</span><span>Contact</span></a>
+        </nav>
+      </div>
+      <div class="policy-contact">
+        <span class="policy-contact-icon" aria-hidden="true">&#9993;</span>
+        <strong>Questions about privacy?</strong>
+        <p>Contact the developer directly.</p>
+        <a href="mailto:zrain.dev@gmail.com">zrain.dev@gmail.com <span aria-hidden="true">&nearr;</span></a>
+      </div>
+    </aside>
+    <article class="policy-paper" aria-label="Zrain Monitor Privacy Policy">
+<p>Zrain Monitor is developed by Zrain. It processes your Firebase authentication identity and the public HTTPS URLs you register for monitoring.</p><h2 id="policy-section-1">Information stored</h2><p>For monitoring, we store your Firebase account identifier, monitor name and URL, status, response time, timestamps, check history, incidents, and in-app notifications and, when you enable email alerts, your verified email address and alert delivery status. Opt-in email alerts use a third-party email delivery provider. We do not intentionally store response bodies, passwords, or confidential endpoint headers.</p><h2 id="policy-section-2">Why we use this information</h2><p>To run scheduled checks, provide your private dashboard, display incidents, enforce usage limits and protect the service from abuse. The service sends periodic HTTP requests to your registered URLs. These requests may be visible in your hosting provider's access logs.</p><h2 id="policy-section-3">Storage and processors</h2><p>Authentication is handled by Firebase Authentication. Website hosting uses Firebase Hosting; the monitoring API and database use Cloudflare Workers and D1. If you enable optional email alerts, Resend processes the email address and alert message to deliver them. Optional Telegram alerts use Telegram Bot API; after you explicitly connect your account, we store your Telegram chat identifier and delivery status in D1 and send alert text to Telegram. Disconnect in Settings or send /stop to the bot to revoke the link. Their infrastructure and privacy policies also apply.</p><h2 id="policy-section-4">Retention</h2><p>Detailed checks are retained for approximately 30 days, with daily summaries retained for up to 90 days. Incidents and monitor data remain until deletion, subject to maintenance and abuse investigation requirements.</p><h2 id="policy-section-5">Deletion</h2><p>Go to Settings in Zrain Monitor and select Delete monitor data &amp; account. If Firebase requires recent authentication, please sign in again before deletion. To request help, email <a href="mailto:zrain.dev@gmail.com">zrain.dev@gmail.com</a>.</p><h2 id="policy-section-6">Limitations</h2><p>Checks are best-effort and may be delayed, interrupted or unavailable when free-tier quotas or platform limits are reached. Keep-Awake requests cannot guarantee that another provider will keep a service running.</p><p>Telegram notifications are off until you connect your Telegram chat and enable alerts for a specific monitor. Email notifications require a configured email provider; the public beta currently prioritizes Telegram.</p><h2 id="policy-section-7">Contact</h2><p><a href="mailto:zrain.dev@gmail.com">zrain.dev@gmail.com</a></p>
+    </article>
+  </div>
+</main>
+<footer class="footer zrain-footer">
+  <div class="container footer-inner zrain-footer__inner">
+    <div class="footer-brand zrain-footer__identity">
+      <a class="zrain-footer__home" href="https://zrain.web.app" aria-label="Developed by Zrain. Open Zrain ecosystem home"><img src="/zrain-logo.webp" class="brand-logo-image zrain-footer__logo" alt="" width="38" height="38"><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a>
+    </div>
+    <div class="footer-links zrain-footer__links">
+      <a href="/">Monitor</a>
+      <a href="/how-it-works.html">How it works</a>
+      <a href="/privacy.html" aria-current="page">Privacy Policy</a>
+      <a href="mailto:zrain.dev@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

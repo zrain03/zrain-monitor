@@ -1,0 +1,28 @@
+/* Official Zrain report logo and print refinements, v1.0.14.6. */
+.zm-report-sheet .zm-report-logo {display:block;width:41px;height:41px;flex:none;object-fit:contain;border-radius:11px}
+@media print {
+  body.zm-print-report #dashboard > .section-title,
+  body.zm-print-report #dashboard > .summary-grid,
+  body.zm-print-report #overview,body.zm-print-report #incidents,
+  body.zm-print-report #settings,body.zm-print-report #system,
+  body.zm-print-report #monitors > :not(#reports),
+  body.zm-print-report #reports > :not(#zm-report-output) {display:none!important}
+  body.zm-print-report #reports,body.zm-print-report #zm-report-output,
+  body.zm-print-report .zm-report-sheet {
+    display:block!important;margin:0!important;padding:0!important;
+    border:0!important;box-shadow:none!important
+  }
+  body.zm-print-report .zm-report-sheet table {width:100%!important;table-layout:auto!important;font-size:11px!important}
+  body.zm-print-report .zm-report-sheet td,body.zm-print-report .zm-report-sheet th {padding:9px 6px!important}
+  body.zm-print-report .zm-report-sheet td:nth-child(2),
+  body.zm-print-report .zm-report-sheet th:nth-child(2) {
+    min-width:76px!important;white-space:nowrap!important;word-break:normal!important;
+    overflow-wrap:normal!important;hyphens:none!important
+  }
+  body.zm-print-report .zm-report-sheet td:nth-child(3),
+  body.zm-print-report .zm-report-sheet th:nth-child(3),
+  body.zm-print-report .zm-report-sheet td:nth-child(5),
+  body.zm-print-report .zm-report-sheet th:nth-child(5) {white-space:nowrap!important}
+  body.zm-print-report .zm-report-table-scroll {overflow:visible!important}
+  body.zm-print-report .zm-report-logo {width:41px!important;height:41px!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}

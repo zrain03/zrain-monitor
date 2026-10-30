@@ -1,0 +1,26 @@
+name: Zrain Independent Monitoring Health
+on:
+  schedule:
+    # Every 30 minutes, offset from the top of the hour to reduce scheduler contention.
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: zrain-independent-watchdog
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check monitoring health and update one GitHub issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node ops/independent-watchdog.mjs

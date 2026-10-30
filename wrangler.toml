@@ -1,0 +1,24 @@
+name = "zrain-monitor-api"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[triggers]
+crons = ["* * * * *"]
+# Dispatch every minute; each monitor remains on a five-minute interval.
+# This avoids starving monitors when more than five become due together.
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zrain-monitor"
+database_id = "dbb3bf95-5576-44d3-b3d4-53c9fb2491b9"
+migrations_dir = "migrations"
+[vars]
+PUBLIC_MONITOR_CREATION = "true"
+FIREBASE_PROJECT_ID = "zrain-monitor"
+ALLOWED_ORIGIN = "https://zrain-monitor.web.app"
+BETA_ADMIN_UID = "FjL1RWXmEHSmWmtYQBuoezARH3y1"
+# Empty default permits only these trusted platform suffixes, not arbitrary DNS.
+ALLOWED_HOSTS = ""
+MAX_MONITORS_PER_USER = "3"
+MAX_GLOBAL_MONITORS = "12"
