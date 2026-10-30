@@ -8,7 +8,7 @@ A new, standalone website and API monitor built for Firebase Hosting Spark + Clo
 
 - Browser dashboard: Firebase Auth email/password + Google sign-in, email verification, password reset, private workspace, monitor cards, full monitor details, recent checks, incidents, in-app notifications, admin scheduler health, account data deletion.
 - Cloudflare Worker: public `/api/health`, Firebase ID token signature/issuer/audience verification using Google's JWKS, strict owner authorization, CRUD, bounded manual checks, admin API and Cron handler.
-- Scheduler: every **one minute** (to spread due work across bounded three-monitor batches); **each monitor is checked every five minutes**. GET-only HTTPS, 12-second timeout, no redirects, no response body stored. Creates incidents after two consecutive failures and closes them after two successes. Last successful status becomes UNKNOWN when the last check is older than 15 minutes.
+- Scheduler: every **one minute** (to spread due work across bounded six-monitor batches); **each monitor is checked every five minutes**. GET-only HTTPS, 12-second timeout, no redirects, no response body stored. Creates incidents after two consecutive failures and closes them after two successes. Last successful status becomes UNKNOWN when the last check is older than 15 minutes.
 - D1 schema and migration, 30-day check retention, daily summary history, bounded global/private-beta quotas, automated Node unit and real SQLite integration tests.
 - No paid services or billing are required by the project. Free tiers still have quotas and no uptime guarantees.
 
@@ -68,7 +68,7 @@ Account deletion in frontend uses this data deletion API then Firebase Auth dele
 
 ## Reliability and capacity notes
 
-- Free Workers have per-invocation CPU and subrequest ceilings. Every Cron run claims at most three due monitors; monitor checks run every five minutes. A one-minute Cron prevents many due monitors waiting five extra minutes for another batch, but this is still best-effort.
+- Free Workers have per-invocation CPU and subrequest ceilings. Every Cron run claims at most six due monitors; monitor checks run every five minutes. A one-minute Cron prevents many due monitors waiting five extra minutes for another batch, but this is still best-effort.
 - Scheduler runs are stored in D1. A successful Cron invocation is different from a successful target check. Two consecutive target failures confirm downtime; a missed scheduler run never turns a target DOWN by itself.
 - When the service is paused or a concurrent job wins its lease, abandoned work is not recorded as a successful check.
 - D1 detailed check results older than 30 days are removed in batches, and daily summaries are kept for 90 days. Incident history remains until deletion.
@@ -111,4 +111,4 @@ This script initializes Git, commits project files, creates `zrain03/zrain-monit
 
 ## Public beta access (October 2026)
 
-Anyone with a signed-in, verified Firebase account can create and manage their own monitors when `PUBLIC_MONITOR_CREATION=true` is deployed. Accounts are isolated by verified UID and existing ownership checks. Each user has a limited monitor quota, global beta capacity is 12 until scheduler capacity is validated for a higher load, and supported public HTTPS hosting destinations remain restricted by the existing validation rules. The System Health administrator dashboard remains admin-only. Do not claim that arbitrary private/internal URLs can be monitored.
+Anyone with a signed-in, verified Firebase account can create and manage their own monitors when `PUBLIC_MONITOR_CREATION=true` is deployed. Accounts are isolated by verified UID and existing ownership checks. Each user has a limited monitor quota, global beta capacity is 30 with a six-monitor-per-minute scheduler batch (best-effort and subject to Cloudflare Free limits), and supported public HTTPS hosting destinations remain restricted by the existing validation rules. The System Health administrator dashboard remains admin-only. Do not claim that arbitrary private/internal URLs can be monitored.
