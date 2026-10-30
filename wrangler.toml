@@ -20,5 +20,5 @@ ALLOWED_ORIGIN = "https://zrain-monitor.web.app"
 BETA_ADMIN_UID = "FjL1RWXmEHSmWmtYQBuoezARH3y1"
 # Empty default permits only these trusted platform suffixes, not arbitrary DNS.
 ALLOWED_HOSTS = ""
-MAX_MONITORS_PER_USER = "3"
-MAX_GLOBAL_MONITORS = "12"
+MAX_MONITORS_PER_USER = "5"
+MAX_GLOBAL_MONITORS = "30"

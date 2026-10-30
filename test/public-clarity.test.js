@@ -33,7 +33,7 @@ test('public FAQ explains Telegram start/opt-in without claiming email active',(
 });
 test('accurate limits and privacy details match checked production implementation',()=>{
  const s=read('public/how-it-works.html');
- for(const str of ['3 monitors per account','12 monitors globally','approximately every five minutes','approximately 30 days','approximately 90 days','approved public HTTPS','no continuous']) {if(str==='no continuous')continue;assert.ok(s.includes(str),str)}
+ for(const str of ['5 monitors per account','30 monitors globally','approximately every five minutes','approximately 30 days','approximately 90 days','approved public HTTPS','no continuous']) {if(str==='no continuous')continue;assert.ok(s.includes(str),str)}
  assert.match(s,/localhost/);
  assert.match(s,/Privacy Policy/);
  assert.match(s,/not a guarantee of continuous uptime|not a hosting service or a guarantee of continuous uptime/i);

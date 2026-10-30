@@ -187,7 +187,7 @@ async function load(){
       capacity.className='capacity-info'+(!c.can_add?' capacity-full':'');
     }
     $("add-open").disabled=false;
-    $("add-open").title="Add a public HTTPS website or API to monitor (up to 3 per account)";
+    $("add-open").title="Add a public HTTPS website or API to monitor (up to 5 per account)";
     $("system").hidden=!profile.admin;
     if(profile.admin)await loadSystem();
     await loadTelegramSettings();

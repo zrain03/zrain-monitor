@@ -35,7 +35,7 @@ test('authentication copy is Monitor-specific and never links accounts across Zr
   const dialog=html.slice(html.indexOf('<dialog id="auth-dialog"'),html.indexOf('<dialog id="create-dialog"'));
   assert.match(dialog,/Zrain Monitor/);
   assert.doesNotMatch(dialog,/Zrain Links|create and manage links/);
-  assert.match(dialog,/Sign in with a verified account to create up to 3 monitors for approved public HTTPS websites and APIs/i);
+  assert.match(dialog,/Sign in with a verified account to create up to 5 monitors for approved public HTTPS websites and APIs/i);
   assert.doesNotMatch(js,/zrain-links\.web\.app|zrain-links\.zrain-dev/);
   assert.match(js,/\bAPI_ORIGIN\b/);
 });
