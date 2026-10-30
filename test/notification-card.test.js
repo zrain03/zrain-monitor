@@ -23,7 +23,7 @@ test('new card CSS stays scoped and is loaded last with a cache-busted module',(
   const html=read('public/index.html');
   const css=read('public/notification-card-v1.css');
   assert.match(html,/notification-card-v1\.css\?v=1\.0\.19\.0/);
-  assert.match(html,/app\.js\?v=1\.0\.21\.0/);
+  assert.match(html,/app\.js\?v=1\.0\.22\.0/);
   assert.ok(html.indexOf('settings-experience-v1.css')<html.indexOf('notification-card-v1.css'));
   assert.match(css,/\.monitor-alert-panel\.monitor-alert-card/);
   assert.match(css,/\.monitor-alert-status\.is-enabled/);
