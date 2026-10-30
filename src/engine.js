@@ -1,7 +1,7 @@
 import {validateTarget,nowISO,inMinutes} from "./validation.js";
 import {transition} from "./state.js";
 const uid=()=>crypto.randomUUID();
-const RUN_SIZE=3;
+const RUN_SIZE=6;
 
 export async function probe(url,env,fetcher=fetch){
   // Recheck before every request, including after a monitor is edited.
@@ -92,7 +92,7 @@ export async function runScheduler(env,fetcher=fetch){
         .bind(lease,inMinutes(started,2),row.id,started,started).run();
       if(changed.meta?.changes===1){list.push({...row,lease_token:lease});claimed++;}
     }
-    // At most 3 outbound checks, leaving room for D1 and other subrequests on Workers Free.
+    // At most 6 outgoing checks per Cron run; retain Cloudflare Free connection and subrequest headroom.
     const results=await Promise.allSettled(list.map(async monitor=>checkOne(db,monitor,env,fetcher)));
     for(const r of results)r.status==="fulfilled"?succeeded++:failed++;
     // Even if a monitor failed to persist, the next run will retry after its lease expires.
