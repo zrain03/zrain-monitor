@@ -1,0 +1,25 @@
+.zr-feedback{max-width:1160px;margin:44px auto 0;padding:0 22px;color:#182334;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+.zr-feedback *{box-sizing:border-box}
+.zr-feedback__panel{background:#fffdfa;border:1px solid #ead9d0;border-radius:25px;padding:clamp(20px,3vw,33px);box-shadow:0 13px 30px rgba(75,41,32,.05)}
+.zr-feedback__head{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.zr-feedback__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#b65035;text-transform:uppercase}
+.zr-feedback h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.8px;line-height:1.2;margin:9px 0}
+.zr-feedback__intro{font-size:13px;line-height:1.8;color:#647083;max-width:720px;margin:0}
+.zr-feedback__buttons{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:16px}
+.zr-feedback__button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 16px;border:1px solid #bd5338;border-radius:12px;background:#bd5338;color:#fff!important;font-size:12px;font-weight:750;text-decoration:none!important;cursor:pointer;line-height:1.4}
+.zr-feedback__button.secondary{background:#fff;border-color:#e6cec2;color:#844d3b!important}
+.zr-feedback__button:focus-visible{outline:3px solid #89b9a9;outline-offset:3px}
+.zr-feedback__status{margin:19px 0 8px;border-radius:12px;padding:13px 15px;background:#f8f1ec;color:#665d57;font-size:12px;line-height:1.7}
+.zr-feedback__list{margin-top:18px;display:grid;gap:12px}
+.zr-feedback__comment{background:#fff;border:1px solid #ece0d8;border-radius:17px;padding:17px}
+.zr-feedback__who{display:flex;align-items:center;gap:10px;min-width:0}
+.zr-feedback__avatar{width:37px;height:37px;border-radius:50%;background:#f2e5d9;object-fit:cover;border:1px solid #ead8c9}
+.zr-feedback__author{color:#26423b!important;font-size:12px;font-weight:800;text-decoration:none!important;overflow-wrap:anywhere}
+.zr-feedback__who small{display:block;color:#7a8492;font-size:11px;margin-top:2px}
+.zr-feedback__body{font-size:13px;line-height:1.8;color:#29394b;margin:13px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.zr-feedback__toolbar{margin-top:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.zr-feedback__source{font-size:11px;color:#687788;line-height:1.6;margin:18px 0 0}
+.zr-feedback__source a{color:#a34832;text-underline-offset:3px}
+.zr-feedback__permalink{font-size:11px;font-weight:700;color:#af5035;text-decoration:underline;text-underline-offset:3px}
+.zr-feedback__comment .zr-feedback__toolbar{margin-top:11px}
+@media(max-width:600px){.zr-feedback{padding:0 12px;margin-top:26px}.zr-feedback__panel{padding:18px}.zr-feedback__head{align-items:flex-start}}
