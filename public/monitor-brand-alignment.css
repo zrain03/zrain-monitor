@@ -1,7 +1,7 @@
 /*
  * Pembangun / Developer: Zrain
  * Dicipta / Created: 2026-11-04
- * Dikemas kini / Last updated: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-05
  * Fail / File: public/monitor-brand-alignment.css
  * BM: Kekalkan gaya Golden Reference untuk navigasi milik Monitor tanpa mengambil alih routing.
  * EN: Preserve Golden Reference styling for Monitor-owned navigation without taking over routing.
@@ -52,3 +52,8 @@
 @media (prefers-reduced-motion: reduce) {
   .zrain-header .topnav a, .clarity-page .clarity-header-nav a { transition: none; }
 }
+
+/* BM: Komuniti berada sebelum footer, responsif dan terasing daripada dashboard Monitor. */
+/* EN: Keep the community before the footer, responsive and isolated from the Monitor dashboard. */
+.zrain-community-slot { width: min(100%, 1160px); margin: 36px auto 0; padding: 0 16px; }
+@media (max-width: 600px) { .zrain-community-slot { margin-top: 24px; padding: 0 12px; } }

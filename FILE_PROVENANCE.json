@@ -11,7 +11,8 @@
     "The registry inventories itself without a self-referential hash.",
     "Historical backup directories and .git metadata remain in the original uploaded ZIP and are intentionally not part of active release source.",
     "Community Feedback code originated at GitHub commit e716227 (2026-11-01), reconciled into repaired Monitor source on 2026-11-04.",
-    "Community Feedback has no privileged browser token, and generated Firebase/Worker output remains excluded."
+    "Community Feedback has no privileged browser token, and generated Firebase/Worker output remains excluded.",
+    "2026-11-05 migration: Zrain Community replaces GitHub-based public feedback on Monitor; old comments were not migrated."
   ],
   "files": {
     ".github/workflows/checks.yml": {
@@ -60,8 +61,8 @@
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
       "last_updated": "2026-11-05",
-      "last_updated_basis": "Windows CRLF/LF compatibility remediation",
-      "sha256": "46952268b113bca774b8f9a68fa47f699f7cafe9a8c095d8738536f8e52ca9fb"
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "346e98d18f8e4b38a8089f1e8968304e5c6a9cf8b8a05cce6744ae9444113c47"
     },
     "Zrain-Fast-E2E-Edge-Ready.mjs": {
       "developer": "Zrain",
@@ -83,9 +84,9 @@
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "new file created for this release",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "5e0fb99e2febbc25e41fe7f6f635be957781fbeec494edc57f35f8b32fe1ed53"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "3447b2608034b28849d2ac3bec6d2d548c5c842c81e836a89a89dff96035f086"
     },
     "docs/REPAIR_AUDIT_2026-11-04.md": {
       "developer": "Zrain",
@@ -95,13 +96,29 @@
       "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
       "sha256": "21188674f32889986a933aca53fc87210eecf6e27c5786fea7697e046624edbe"
     },
+    "docs/ZRAIN_COMMUNITY_CANONICAL_POLICY_2026-11-05.md": {
+      "developer": "Zrain",
+      "created": "2026-11-05",
+      "created_basis": "new file for canonical Zrain Community migration",
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "e266ba5ade8eda68d045ced1504ed3f85dfb82f6faa8a0f43f6d0778163c122b"
+    },
+    "docs/ZRAIN_COMMUNITY_MONITOR_MIGRATION_2026-11-05.md": {
+      "developer": "Zrain",
+      "created": "2026-11-05",
+      "created_basis": "new file for canonical Zrain Community migration",
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "403b40fafed7ec11fdce12e5cfe6659b0846858033757f8cf2826d71c4aaa3f0"
+    },
     "firebase.json": {
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "4d5a26bfd40286969b1dd1da4709da4f689032cd22036c3c1a68897588e64afe"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "a454891cac48ea8168dedd279351099f3364094aa31ff661d420235a255a2be2"
     },
     "migrations/0001_init.sql": {
       "developer": "Zrain",
@@ -223,22 +240,6 @@
       "last_updated_basis": "content updated in this repair",
       "sha256": "9eb049a3052c6945c68525287dc9614318c0504644f2a39fefb86fc3a0f01770"
     },
-    "public/feedback-embed.js": {
-      "developer": "Zrain",
-      "created": "2026-11-01",
-      "created_basis": "GitHub commit e716227a9be4eb2aace9c50e2eff55d03917e7e7",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this release",
-      "sha256": "97db1fbe56162cb8f2f683833629c4b1ab840c663981803afb57b5b0298a2b76"
-    },
-    "public/feedback.css": {
-      "developer": "Zrain",
-      "created": "2026-11-01",
-      "created_basis": "GitHub commit e716227a9be4eb2aace9c50e2eff55d03917e7e7",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this release",
-      "sha256": "51a167e5033e1026eb635398777be2c22f1306e89bad06e18ab8c9ee3f57d91a"
-    },
     "public/firebase-config.js": {
       "developer": "Zrain",
       "created": "2026-10-30",
@@ -267,25 +268,25 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "1514b92ed6b6ef42e1beee6be824cd2bfc615fe05b42718128d3a731f2ffd23c"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "42c7270ac2ab3cd4cb63b0bbece3786a66186f39a8bbdcdcc351eca61808801f"
     },
     "public/index.html": {
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "d3c703bf6c63e2c6c94d1b5216f6e8ddc5c832d6f4e032d77862d8b4bf08cd63"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "5c0c93bea708a8accd442d464819e9eee12e6b9039d8f38a9f27cf4a9f3d826d"
     },
     "public/monitor-brand-alignment.css": {
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "new repair source or supplied UI upstream evidence",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "5e903dd9aa65400d7998819b6892d5bbe2ceb77b7d4271892a57aeec9acbf574"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "9d2354c9872e551c3d8d31b70da192b2c23266e504255cab359ff8ec3dbc9c26"
     },
     "public/monitor-report-brand-v1.0.14.6.css": {
       "developer": "Zrain",
@@ -363,9 +364,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "aeb73086b19a09e57e0a0cf7aed8e8e76cb1c3126180e3ce932a793740cd2743"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "c04a80f61499c79de164f9bc2afcd0e01a6ae662f4a7c9f2476d19aba96ea520"
     },
     "public/public-clarity-v1.css": {
       "developer": "Zrain",
@@ -587,9 +588,9 @@
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "new file created for this release",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this release",
-      "sha256": "6ff8bee07639233fc25f4f4646170763287c86522e937ae61468cf1aae334422"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
+      "sha256": "091b9ebb2b9761bc9207df9fdcddeecb2800c464a5b5d488fd5c3c3f6411b5fa"
     },
     "test/email-alerts.test.js": {
       "developer": "Zrain",
