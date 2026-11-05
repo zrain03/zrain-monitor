@@ -1,12 +1,14 @@
 /*
  * Pembangun / Developer: Zrain
  * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
- * Dikemas kini / Last updated: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-05
  * Fail / File: scripts/sync-zrain-ui.mjs
  * BM: Skrip operasi, konfigurasi atau deployment Monitor.
  * EN: Monitor operations, configuration or deployment script.
  */
-/** Mirror the exact pinned Zrain UI files into Firebase Hosting's public/ folder. */
+// BM: Salin aset rasmi yang dipin; CRLF dan LF dianggap setara untuk JS/CSS sahaja.
+// EN: Mirror pinned official assets; treat CRLF and LF as equivalent only for JS/CSS.
+
 import {readFile, writeFile} from "node:fs/promises";
 import {fileURLToPath} from "node:url";
 import path from "node:path";
@@ -25,6 +27,14 @@ const files = [
   ["src/zrain-ui.js", "zrain-ui.js"],
   ["assets/zrain-logo.webp", "zrain-logo.webp"]
 ];
+// BM: Normalisasikan line ending teks untuk mengelakkan perbezaan checkout Windows.
+// EN: Normalize text line endings to avoid Windows checkout differences.
+// Logo binari kekal dibandingkan byte demi byte.
+// Binary logo comparisons remain byte-for-byte strict.
+const normalize = (buffer, name) =>
+  /\.(?:css|js)$/.test(name)
+    ? Buffer.from(buffer.toString("utf8").replace(/\r\n/g, "\n"), "utf8")
+    : buffer;
 const check = process.argv.includes("--check");
 let changed = 0;
 for (const [from, name] of files) {
@@ -36,11 +46,11 @@ for (const [from, name] of files) {
     if (error?.code === "ENOENT") return null;
     throw error;
   });
-  if (!actual || !expected.equals(actual)) {
+  if (!actual || !normalize(expected, name).equals(normalize(actual, name))) {
     changed++;
     if (check) console.error(`Out of sync: ${name}`);
     else {
-      await writeFile(file, expected);
+      await writeFile(file, normalize(expected, name));
       console.log(`Synced official Zrain UI: ${name}`);
     }
   }

@@ -1,7 +1,7 @@
 <!--
 Pembangun / Developer: Zrain
 Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
-Dikemas kini / Last updated: 2026-11-04
+Dikemas kini / Last updated: 2026-11-05
 Fail / File: README.md
 BM: Fail sokongan Zrain Monitor.
 EN: Zrain Monitor supporting file.
@@ -133,3 +133,9 @@ Anyone with a signed-in, verified Firebase account can create and manage their o
 **EN:** `public/feedback-embed.js`, `public/feedback.css`, and the corresponding references on all three pages restore the Community Feedback functionality introduced in GitHub commit `e716227` (1 November 2026). Firebase CSP narrowly allows `api.github.com` and `avatars.githubusercontent.com` for public comments. Comments render as plain text, not untrusted HTML. Reading requires no login; writing requires a GitHub account. Moderation occurs through GitHub repository permissions, not a Monitor admin endpoint. On GitHub failure or rate limits, users retain a link to the discussion.
 
 **BM / EN:** See `docs/COMPLETION_AUDIT_2026-11-04.md` for the exact verification scope and remaining manual checks.
+
+### Windows line endings and pinned Zrain UI / Line ending Windows dan Zrain UI yang dipin
+
+**BM:** `npm run ui:check` menyemak aset `@zrain/ui` daripada commit yang dipin. Untuk JavaScript dan CSS sahaja, perbandingan menganggap `CRLF` dan `LF` setara kerana Git/npm pada Windows boleh menggunakan line ending berbeza tanpa mengubah kandungan. Fail logo binari kekal dibandingkan byte demi byte. Jika UI benar-benar berubah, jalankan `npm run ui:sync` dan semak diff serta provenance sebelum commit. Jangan memaksa `ui:sync` untuk membetulkan perbezaan line ending semata-mata.
+
+**EN:** `npm run ui:check` verifies assets against the pinned `@zrain/ui` commit. JavaScript and CSS comparisons normalize `CRLF` and `LF` only, since Windows Git/npm may choose different text line endings without changing the content. The binary logo remains byte-exact. For substantive UI changes, run `npm run ui:sync` and review diffs and provenance before committing. Do not force `ui:sync` merely for line-ending differences.

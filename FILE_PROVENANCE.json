@@ -2,7 +2,7 @@
   "schema_version": 1,
   "product": "Zrain Monitor",
   "developer": "Zrain",
-  "generated_on": "2026-11-04",
+  "generated_on": "2026-11-05",
   "basis": "Earliest path-level Git addition where available; unverified is not substituted with an invented date.",
   "notes": [
     "Zrain UI files keep upstream provenance headers from the supplied @zrain/ui archive.",
@@ -50,8 +50,8 @@
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "created during this repair",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "registry generated during this repair",
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "registry updated for Windows EOL remediation",
       "sha256": null,
       "note": "self hash intentionally omitted"
     },
@@ -59,9 +59,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "218a9f6b20368bab47169855f53c54db116253e2f41f5f91eff078ed8eac3b1b"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "Windows CRLF/LF compatibility remediation",
+      "sha256": "46952268b113bca774b8f9a68fa47f699f7cafe9a8c095d8738536f8e52ca9fb"
     },
     "Zrain-Fast-E2E-Edge-Ready.mjs": {
       "developer": "Zrain",
@@ -475,9 +475,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "bdf60d0aee8a8c7ed73e22b682a4c48a6ed54965ef6dc4b0b3239a98ceb22773"
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "Windows CRLF/LF compatibility remediation",
+      "sha256": "3eebab01361b0aea1f18db9c0f1c4233943d27aaaedf1befb06d913861abd4eb"
     },
     "src/api.js": {
       "developer": "Zrain",
@@ -702,6 +702,14 @@
       "last_updated": "2026-11-04",
       "last_updated_basis": "content updated in this repair",
       "sha256": "b92b44ad81a68567570584b042e8cff12ac893671202ebee842399473fab875b"
+    },
+    "test/ui-sync-eol.test.js": {
+      "developer": "Zrain",
+      "created": "2026-11-05",
+      "created_basis": "created during the 2026-11-05 EOL remediation",
+      "last_updated": "2026-11-05",
+      "last_updated_basis": "Windows CRLF/LF compatibility remediation",
+      "sha256": "18da28ee9c8afb8c7bc4cdc1511396b58868b11f5b902e60dfd7547f98446f7f"
     },
     "test/validation.test.js": {
       "developer": "Zrain",
