@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/notification-card-v1.css
+ * BM: Gaya halaman Monitor, komponen dan responsiviti.
+ * EN: Monitor page, component and responsive styling.
+ */
 /* Zrain Monitor 1.0.19: compact notification card only.
    The status is driven by API data, never by presentation defaults. */
 .monitor-alert-panel.monitor-alert-card{

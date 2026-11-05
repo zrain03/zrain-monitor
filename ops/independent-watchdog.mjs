@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: ops/independent-watchdog.mjs
+ * BM: Dokumentasi atau alat operasi monitoring.
+ * EN: Monitoring operational documentation or tooling.
+ */
 // Standalone independent monitor. No Cloudflare credentials or database access.
 // The GitHub Actions run checks the public monitoring-health endpoint.
 import { pathToFileURL } from 'node:url';
@@ -5,6 +13,8 @@ import { pathToFileURL } from 'node:url';
 export const HEALTH_URL = 'https://zrain-monitor-api.zrain-dev.workers.dev/api/health/monitoring';
 export const ISSUE_TITLE = '[Zrain Watchdog] Monitoring health degraded';
 
+// BM: Periksa status HTTP monitor tanpa mengubah state produk.
+// EN: Check monitoring health without mutating product state.
 export async function checkHealth(fetchImpl = fetch) {
   try {
     const response = await fetchImpl(HEALTH_URL, {
@@ -18,12 +28,16 @@ export async function checkHealth(fetchImpl = fetch) {
   }
 }
 
+// BM: Klasifikasikan dua bacaan kesihatan untuk mengurangkan false alarm.
+// EN: Classify two health observations to reduce false alarms.
 export function decide(first, second) {
   if (first.ok && second.ok) return 'healthy';
   if (!first.ok && !second.ok) return 'degraded';
   return 'inconclusive';
 }
 
+// BM: Jalankan pemeriksaan watchdog bebas untuk pengendalian alert luar.
+// EN: Run the independent watchdog check for external alert handling.
 async function main() {
   const token = process.env.GITHUB_TOKEN;
   const repo = process.env.GITHUB_REPOSITORY;

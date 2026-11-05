@@ -1,3 +1,9 @@
+-- Pembangun / Developer: Zrain
+-- Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+-- Dikemas kini / Last updated: 2026-11-04
+-- Fail / File: migrations/0001_init.sql
+-- BM: Migrasi skema D1 yang diperlukan mengikut turutan.
+-- EN: Ordered D1 schema migration required for deployment.
 CREATE TABLE IF NOT EXISTS users (
   uid TEXT PRIMARY KEY, email TEXT, created_at TEXT NOT NULL, last_seen_at TEXT NOT NULL
 );

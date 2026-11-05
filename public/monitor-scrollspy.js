@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/monitor-scrollspy.js
+ * BM: Perilaku antaramuka atau konfigurasi frontend Monitor.
+ * EN: Monitor frontend behavior or configuration.
+ */
 // Zrain Monitor navigation follows the section actually being read, not the
 // previously clicked tab or an outdated URL hash. No monitoring/auth changes.
 export const SECTION_ORDER = ["overview", "monitors", "incidents", "settings", "system"];
@@ -8,12 +16,16 @@ export const ANCHORS = {
 
 // The reading line is below the fixed header and roughly one quarter of the
 // remaining viewport. It detects a section while its heading is visible.
+// BM: Kira garis rujukan viewport di bawah header sticky semasa menentukan seksyen aktif.
+// EN: Calculate the reading line below the sticky header for active-section selection.
 export function readingLine(viewportHeight, headerHeight) {
   const h = Math.max(320,Number(viewportHeight)||768);
   const top = Math.max(0,Number(headerHeight)||0);
   return Math.min(h-12,top+Math.max(48,(h-top)*.25));
 }
 
+// BM: Pilih seksyen yang benar-benar kelihatan dengan mengambil kira akses admin dan hujung halaman.
+// EN: Select the truly visible section while accounting for admin access and page end.
 export function visibleSection(sectionTops,line,{admin=false,atBottom=false}={}) {
   const order=admin?SECTION_ORDER:SECTION_ORDER.slice(0,-1);
   if(atBottom)return order[order.length-1];
@@ -25,6 +37,8 @@ export function visibleSection(sectionTops,line,{admin=false,atBottom=false}={})
   return current;
 }
 
+// BM: Hubungkan tab dashboard kepada scroll/URL tanpa mengambil alih routing atau account state.
+// EN: Connect dashboard tabs to scroll/URL without taking over routing or account state.
 export function mountMonitorScrollspy(doc,win) {
   const nav=doc.querySelector(".zrain-header .topnav");
   const header=doc.querySelector(".zrain-header");

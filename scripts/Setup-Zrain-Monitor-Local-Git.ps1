@@ -1,3 +1,9 @@
+# Pembangun / Developer: Zrain
+# Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+# Dikemas kini / Last updated: 2026-11-04
+# Fail / File: scripts/Setup-Zrain-Monitor-Local-Git.ps1
+# BM: Skrip operasi, konfigurasi atau deployment Monitor.
+# EN: Monitor operations, configuration or deployment script.
 # Optional local source control setup; does not publish files or commit secrets.
 $ErrorActionPreference = 'Stop'
 $project = Split-Path -Parent $PSScriptRoot

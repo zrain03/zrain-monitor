@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: ops/independent-watchdog.test.mjs
+ * BM: Dokumentasi atau alat operasi monitoring.
+ * EN: Monitoring operational documentation or tooling.
+ */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {checkHealth, decide, ISSUE_TITLE} from './independent-watchdog.mjs';

@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/monitor-report-brand-v1.0.14.6.css
+ * BM: Gaya halaman Monitor, komponen dan responsiviti.
+ * EN: Monitor page, component and responsive styling.
+ */
 /* Official Zrain report logo and print refinements, v1.0.14.6. */
 .zm-report-sheet .zm-report-logo {display:block;width:41px;height:41px;flex:none;object-fit:contain;border-radius:11px}
 @media print {

@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/telegram-alerts.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 import {nowISO, inMinutes} from './validation.js';
 
 export const TELEGRAM_BOT_USERNAME = 'ZrainMonitorAlertsBot';
@@ -11,6 +19,8 @@ export const telegramReady = env => Boolean(env.DB && typeof env.TELEGRAM_BOT_TO
   /^\d{5,15}:[A-Za-z0-9_-]{25,}$/.test(env.TELEGRAM_BOT_TOKEN) &&
   validSecret(env.TELEGRAM_WEBHOOK_SECRET));
 
+// BM: Bandingkan nilai rahsia tanpa membezakan kedudukan aksara bagi mengurangkan kebocoran masa.
+// EN: Compare secret values without early-position differences to limit timing leaks.
 function secureEqual(a,b) {
   if(typeof a!=='string'||typeof b!=='string')return false;
   const n=Math.max(a.length,b.length);let diff=a.length^b.length;
@@ -18,11 +28,15 @@ function secureEqual(a,b) {
   return diff===0;
 }
 
+// BM: Hash token sambungan Telegram sebelum disimpan; token raw hanya ditunjukkan kepada pemilik.
+// EN: Hash the Telegram link token before storage; only the owner receives the raw link.
 async function digest(value) {
   const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value));
   return [...new Uint8Array(bytes)].map(b=>b.toString(16).padStart(2,'0')).join('');
 }
 
+// BM: Hasilkan pautan sambungan Telegram sementara bagi pemilik akaun yang disahkan.
+// EN: Create a temporary Telegram link for an authenticated account owner.
 export async function createTelegramLink(db,uid) {
   const bytes=new Uint8Array(24);
   crypto.getRandomValues(bytes);
@@ -35,6 +49,8 @@ export async function createTelegramLink(db,uid) {
   return {url:`https://t.me/${TELEGRAM_BOT_USERNAME}?start=${token}`,expires_at:inMinutes(stamp,10)};
 }
 
+// BM: Putuskan pautan Telegram milik pengguna dan batalkan penghantaran tertangguh berkaitan.
+// EN: Disconnect the user-owned Telegram link and cancel related pending deliveries.
 export async function disconnectTelegram(db,uid) {
   await db.batch([
     db.prepare(`DELETE FROM telegram_alert_outbox WHERE owner_uid=? AND status!='SENT'`).bind(uid),
@@ -45,6 +61,8 @@ export async function disconnectTelegram(db,uid) {
   ]);
 }
 
+// BM: Hantar mesej melalui Telegram tanpa log URL yang mengandungi token rahsia.
+// EN: Send via Telegram without logging request URLs containing the confidential bot token.
 async function telegramSend(env,chatId,body,fetcher=fetch) {
   const response=await fetcher(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,{
     method:'POST',headers:{'Content-Type':'application/json'},
@@ -57,6 +75,8 @@ async function telegramSend(env,chatId,body,fetcher=fetch) {
   return data?.ok===true;
 }
 
+// BM: Hadkan mesej ujian setiap owner dan rekod kejayaan sebenar, bukan insiden palsu.
+// EN: Rate-limit per-owner test messages and record actual delivery, not fake incidents.
 export async function sendTelegramTest(env,uid,fetcher=fetch) {
   const db=env.DB;
   const linked=await db.prepare('SELECT chat_id FROM telegram_connections WHERE owner_uid=?').bind(uid).first();
@@ -81,6 +101,8 @@ export async function sendTelegramTest(env,uid,fetcher=fetch) {
   return {sent,reason:sent?'sent':'delivery_failed'};
 }
 
+// BM: Hantar ringkasan status kepada chat Telegram yang telah dipautkan.
+// EN: Send a status summary only to an already linked Telegram chat.
 async function sendBotStatus(env,chatId,fetcher) {
   const linked=await env.DB.prepare('SELECT owner_uid,connected_at FROM telegram_connections WHERE chat_id=?').bind(chatId).first();
   if(!linked) {
@@ -99,6 +121,8 @@ async function sendBotStatus(env,chatId,fetcher) {
   await telegramSend(env,chatId,body,fetcher).catch(()=>{});
 }
 
+// BM: Proses webhook Telegram setelah semakan secret dan pengasingan setiap pemilik.
+// EN: Process Telegram webhooks after secret verification and per-owner isolation.
 export async function handleTelegramWebhook(request,env,fetcher=fetch) {
   if(!telegramReady(env))return textResponse({ok:false},503);
   if(!secureEqual(request.headers.get('x-telegram-bot-api-secret-token'),env.TELEGRAM_WEBHOOK_SECRET))
@@ -156,6 +180,8 @@ export async function handleTelegramWebhook(request,env,fetcher=fetch) {
   return textResponse({ok:true});
 }
 
+// BM: Hantar batch notifikasi tertangguh dengan had cubaan dan pengendalian kegagalan.
+// EN: Deliver a bounded batch of queued alerts with attempt limits and failure handling.
 export async function deliverPendingTelegramAlerts(env,fetcher=fetch) {
   if(!telegramReady(env))return {processed:0,sent:0,failed:0};
   const db=env.DB,stamp=nowISO();

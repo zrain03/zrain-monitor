@@ -1,13 +1,27 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/email-alerts.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 import {nowISO,inMinutes} from './validation.js';
 
 const BATCH_SIZE = 3;
 const MAX_ATTEMPTS = 3;
+// BM: Semak format alamat penerima dan panjang sebelum penghantaran.
+// EN: Validate recipient email shape and length before delivery.
 const validEmail = value => typeof value === 'string' && value.length <= 254 &&
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
+// BM: Benarkan email delivery hanya apabila konfigurasi penyedia lengkap.
+// EN: Enable email delivery only when provider configuration is complete.
 export const emailAlertsReady = env => Boolean(env.RESEND_API_KEY &&
   typeof env.ALERT_FROM_EMAIL === 'string' && validEmail(env.ALERT_FROM_EMAIL));
 
+// BM: Cuba hantar e-mel tertangguh tanpa membenarkan provider menghentikan scheduler.
+// EN: Attempt queued email delivery without allowing provider failures to stop scheduling.
 export async function deliverPendingEmailAlerts(env, fetcher=fetch) {
   if (!env.DB || !emailAlertsReady(env)) return {processed:0, sent:0, failed:0};
   const db = env.DB;

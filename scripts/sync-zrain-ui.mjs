@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: scripts/sync-zrain-ui.mjs
+ * BM: Skrip operasi, konfigurasi atau deployment Monitor.
+ * EN: Monitor operations, configuration or deployment script.
+ */
 /** Mirror the exact pinned Zrain UI files into Firebase Hosting's public/ folder. */
 import {readFile, writeFile} from "node:fs/promises";
 import {fileURLToPath} from "node:url";

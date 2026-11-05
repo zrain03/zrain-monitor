@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/monitor-report.js
+ * BM: Perilaku antaramuka atau konfigurasi frontend Monitor.
+ * EN: Monitor frontend behavior or configuration.
+ */
 /* Zrain Monitor report & HTTP glossary v1.0.12.
  * Read-only frontend: uses the existing authenticated API. No extra polling. */
 const HTTP_GROUPS = [
@@ -69,13 +77,21 @@ const HTTP_GROUPS = [
     [511,"Network Authentication Required","The network requires authentication before access."]]]
 ];
 const knownStatuses = new Map(HTTP_GROUPS.flatMap(group => group[2].map(row => [row[0],row])));
+// BM: Bina nod laporan sebagai teks DOM untuk mengelakkan injection.
+// EN: Build report nodes as DOM text to prevent injection.
 const el = (tag,className,textValue) => {const x=document.createElement(tag);if(className)x.className=className;if(textValue!==undefined)x.textContent=String(textValue);return x;};
 const safe = v => String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+// BM: Tolak timestamp yang tidak sah daripada paparan laporan.
+// EN: Reject invalid timestamps in report rendering.
 const validDate = v => {const d=new Date(v);return Number.isFinite(d.getTime())?d:null;};
 const description = code => {const n=Number(code);return knownStatuses.get(n)?.[2] || (n>=100 && n<600 ? "An HTTP response outside the common codes listed in the glossary." : "No HTTP response recorded. The check may have encountered a network or timeout error.");};
+// BM: Tukar jenis monitor kepada label laporan yang mudah difahami.
+// EN: Map monitor purpose to a reader-friendly report label.
 const purposeName = p => p==="keepawake"?"Keep-Awake monitoring":"Uptime monitoring";
 const formatMs = x => x!=null && Number.isFinite(Number(x))?`${Math.round(Number(x))} ms`:"Not recorded";
 
+// BM: Pasang bahagian laporan pada dashboard sedia ada dan gunakan API auth yang disuntik.
+// EN: Mount report controls on the existing dashboard using the injected authenticated API.
 export function installMonitorReports({api,getMonitors,formatTime}) {
   const monitoringSection=document.getElementById("monitors");
   const detail=document.getElementById("monitor-detail");

@@ -1,0 +1,54 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/monitor-brand-alignment.css
+ * BM: Kekalkan gaya Golden Reference untuk navigasi milik Monitor tanpa mengambil alih routing.
+ * EN: Preserve Golden Reference styling for Monitor-owned navigation without taking over routing.
+ */
+/* BM: Padankan jarak dan bentuk menu dashboard dengan komponen rasmi terkini.
+   EN: Match dashboard navigation spacing and shape to the current official component. */
+.zrain-header .topnav { gap: 5px; min-width: 0; }
+.zrain-header .topnav a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 0; padding: 8px 10px; border: 0; border-radius: 9px;
+  line-height: normal; box-shadow: none; text-decoration: none;
+  transition: background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+/* BM: Gunakan keadaan aktif Discover yang diluluskan untuk tab sebenar, termasuk atribut accessibility.
+   EN: Apply the approved Discover active state to actual tabs, including accessibility attributes. */
+.zrain-header .topnav a:is(.current, .active, [aria-current="page"], [aria-current="location"]) {
+  color: #a64930; font-weight: 850; background: #fff1e9;
+  border-radius: 9px; padding: 8px 10px; box-shadow: inset 0 -2px 0 #b95136;
+}
+/* BM: Halaman panduan menggunakan menu milik produk, jadi samakan paparan tanpa menukar menu.
+   EN: The guide owns its menu; align its appearance without replacing the menu. */
+.clarity-page .clarity-header-nav { gap: 5px; margin-left: auto; }
+.clarity-page .clarity-header-nav a {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px 10px; border-radius: 9px; text-decoration: none;
+  transition: background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+.clarity-page .clarity-header-nav a[aria-current="page"] {
+  color: #a64930; font-weight: 850; background: #fff1e9;
+  text-decoration: none; box-shadow: inset 0 -2px 0 #b95136;
+}
+/* BM: Fokus keyboard dan sentuhan mobile mesti kekal kelihatan serta boleh dicapai.
+   EN: Keyboard focus and mobile touch navigation must remain visible and accessible. */
+.clarity-page .clarity-header-nav a:focus-visible { outline: 2px solid #bd5338; outline-offset: 2px; }
+@media (max-width: 700px) {
+  .zrain-header .topnav {
+    flex: 1 0 100%; width: 100%; max-width: 100%; min-width: 0;
+    overflow-x: auto; overscroll-behavior-x: contain; gap: 4px;
+  }
+  .zrain-header .topnav a { flex-shrink: 0; }
+  .clarity-page .clarity-header-nav {
+    order: 3; flex: 1 0 100%; min-width: 0; width: 100%;
+    max-width: 100%; flex-wrap: nowrap; overflow-x: auto;
+    overscroll-behavior-x: contain; gap: 4px; padding-bottom: 8px;
+  }
+  .clarity-page .clarity-header-nav a { flex-shrink: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zrain-header .topnav a, .clarity-page .clarity-header-nav a { transition: none; }
+}

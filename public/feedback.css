@@ -1,3 +1,13 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: 2026-11-01 (GitHub commit e716227)
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/feedback.css
+ * BM: Menggayakan panel Community Feedback tersendiri selepas kandungan dan sebelum footer.
+ * EN: Style the dedicated Community Feedback panel after page content and before the footer.
+ */
+/* BM: Hadkan CSS kepada namespace zr-feedback supaya UI utama Monitor tidak berubah.
+ * EN: Scope CSS to zr-feedback so the main Monitor interface remains unchanged. */
 .zr-feedback{max-width:1160px;margin:44px auto 0;padding:0 22px;color:#182334;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
 .zr-feedback *{box-sizing:border-box}
 .zr-feedback__panel{background:#fffdfa;border:1px solid #ead9d0;border-radius:25px;padding:clamp(20px,3vw,33px);box-shadow:0 13px 30px rgba(75,41,32,.05)}
@@ -5,6 +15,8 @@
 .zr-feedback__eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:#b65035;text-transform:uppercase}
 .zr-feedback h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.8px;line-height:1.2;margin:9px 0}
 .zr-feedback__intro{font-size:13px;line-height:1.8;color:#647083;max-width:720px;margin:0}
+/* BM: Tindakan utama, pautan, status dan keadaan focus mesti tetap boleh diakses.
+ * EN: Primary actions, links, status and focus states must stay accessible. */
 .zr-feedback__buttons{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:16px}
 .zr-feedback__button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 16px;border:1px solid #bd5338;border-radius:12px;background:#bd5338;color:#fff!important;font-size:12px;font-weight:750;text-decoration:none!important;cursor:pointer;line-height:1.4}
 .zr-feedback__button.secondary{background:#fff;border-color:#e6cec2;color:#844d3b!important}
@@ -22,4 +34,6 @@
 .zr-feedback__source a{color:#a34832;text-underline-offset:3px}
 .zr-feedback__permalink{font-size:11px;font-weight:700;color:#af5035;text-decoration:underline;text-underline-offset:3px}
 .zr-feedback__comment .zr-feedback__toolbar{margin-top:11px}
+/* BM: Pada skrin kecil panel menggunakan padding lebih padat tanpa overflow mendatar.
+ * EN: On narrow screens use compact padding without horizontal overflow. */
 @media(max-width:600px){.zr-feedback{padding:0 12px;margin-top:26px}.zr-feedback__panel{padding:18px}.zr-feedback__head{align-items:flex-start}}

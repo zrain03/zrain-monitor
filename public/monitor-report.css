@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/monitor-report.css
+ * BM: Gaya halaman Monitor, komponen dan responsiviti.
+ * EN: Monitor page, component and responsive styling.
+ */
 /* Zrain Monitor v1.0.12 â€” reports and HTTP glossary; scoped to new UI only. */
 .zm-report-card{margin:35px 0 15px;border:1px solid #eddcd2;border-radius:22px;background:#fffdfb;padding:28px;box-shadow:0 8px 28px #85492708}
 .zm-report-heading{display:flex;justify-content:space-between;gap:16px;align-items:start}

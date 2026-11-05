@@ -1,3 +1,9 @@
+# Pembangun / Developer: Zrain
+# Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+# Dikemas kini / Last updated: 2026-11-04
+# Fail / File: .github/workflows/tests.yml
+# BM: Konfigurasi automasi pemeriksaan kod dan operasi.
+# EN: Automation configuration for code checks and operations.
 name: Zrain Monitor Tests
 on:
   push:

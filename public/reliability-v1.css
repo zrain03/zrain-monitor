@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/reliability-v1.css
+ * BM: Gaya halaman Monitor, komponen dan responsiviti.
+ * EN: Monitor page, component and responsive styling.
+ */
 /* Scoped additional clarity. Shared Zrain header, footer and auth styling remain unchanged. */
 .capacity-info {padding:12px 16px;border:1px solid #e8ddd4;border-radius:12px;background:#fffaf6;color:#5b6570;font-size:12px;line-height:1.6;margin:14px 0}
 .capacity-info.capacity-full {border-color:#ecd7b7;background:#fffbf3;color:#86623b}

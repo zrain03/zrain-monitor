@@ -1,30 +1,15 @@
-# Optional one-command GitHub publication, after GitHub CLI (gh) is installed and authenticated.
-# Never runs a deployment; it only backs up source code to your GitHub repository.
+# Pembangun / Developer: Zrain
+# Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+# Dikemas kini / Last updated: 2026-11-04
+# Fail / File: scripts/Publish-Zrain-Monitor.ps1
+# BM: Penghadang operasi legasi: skrip lama ditulis semasa repo belum wujud, dan tersasar ke branch main.
+# EN: Legacy safety gate: the old script predated the repository and targeted the wrong main branch.
+# BM: Jangan stage semua backup tempatan atau cuba mencipta semula repository private yang sudah ada.
+# EN: Never stage all local historical backups or recreate the existing private repository.
 $ErrorActionPreference = 'Stop'
-$root = Split-Path -Parent $PSScriptRoot
-Set-Location $root
-if (!(Get-Command git -ErrorAction SilentlyContinue)) { throw 'Git is not installed.' }
-if (!(Get-Command gh -ErrorAction SilentlyContinue)) { throw 'Install GitHub CLI from https://cli.github.com and run gh auth login.' }
-gh auth status
-if ($LASTEXITCODE -ne 0) { throw 'Run gh auth login to connect your GitHub account.' }
-if (!(Test-Path '.git')) { git init; git branch -M main }
-if ($LASTEXITCODE -ne 0) { throw 'Git init failed.' }
-git add .
-if ($LASTEXITCODE -ne 0) { throw 'Git add failed.' }
-git diff --cached --stat
-git diff --cached --quiet
-if ($LASTEXITCODE -eq 1) {
-    git commit -m 'feat: initial Zrain Monitor independent beta'
-    if ($LASTEXITCODE -ne 0) { throw 'Git commit failed.' }
-}
-$existing = git remote get-url origin 2>$null
-if ($LASTEXITCODE -eq 0 -and $existing) {
-    if ($existing -notmatch 'zrain03/zrain-monitor') { throw "Existing origin is not Zrain Monitor: $existing" }
-    git push -u origin main
-    if ($LASTEXITCODE -ne 0) { throw 'Git push failed.' }
-} else {
-    # gh creates the repository, remote and first push, without rewriting other repositories.
-    gh repo create zrain03/zrain-monitor --public --source . --remote origin --push
-    if ($LASTEXITCODE -ne 0) { throw 'GitHub repository creation/push failed.' }
-}
-git status -sb
+throw @'
+Deprecated Zrain Monitor GitHub publisher. No files were staged, committed or pushed.
+The official repository already exists as zrain03/zrain-monitor (private), branch master.
+Use the verified 2026-11-04 GitHub-ready ZIP and its Publish-Zrain-Monitor-Verified-2026-11-04.ps1 instead.
+That workflow clones remote master, preserves Community Feedback, runs tests and pushes without force.
+'@

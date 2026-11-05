@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: README.md
+BM: Fail sokongan Zrain Monitor.
+EN: Zrain Monitor supporting file.
+-->
+
 # Zrain Monitor v1.0 | Independent uptime and Keep-Awake platform
 
 **Developed by Zrain** | Contact: zrain.dev@gmail.com
@@ -19,11 +28,11 @@ A new, standalone website and API monitor built for Firebase Hosting Spark + Clo
 1. Create a **Firebase project on Spark** dedicated to Monitor, e.g. `zrain-monitor`. Enable Firebase Authentication **Email/Password** and **Google**. Register a Web app in Firebase Console and copy its public Firebase Web config: `apiKey`, `projectId`, `appId`. Enable Hosting and verify its site ID, ideally `zrain-monitor`. Add your Hosting domain in Firebase Auth **Authorized domains**. Firebase console configuration requires your login; this project never writes credentials on your behalf.
 2. Sign in with the account you want to administer in Firebase Authentication and copy its UID from Firebase Console > Authentication > Users. The configured UID grants access to administrator-only System Health diagnostics. Public monitor creation is controlled separately by `PUBLIC_MONITOR_CREATION`.
 3. Create a **Cloudflare Free** account. Find its Workers subdomain in Dashboard > Workers & Pages. Install Node.js 22, Firebase CLI (`npm install -g firebase-tools`), and authenticate (`firebase login`, `npx wrangler login`). No paid tiers or credit-card upgrades.
-4. Extract the ZIP into `Downloads\zrain-monitor`. In PowerShell run:
+4. Keep the active repository at `Zrain\Projects\zrain-monitor`. For a **new setup only**, open PowerShell and run:
 
 ```powershell
-cd "$env:USERPROFILE\Downloads\zrain-monitor"
-npm install
+cd "$env:USERPROFILE\Downloads\Zrain\Projects\zrain-monitor"
+npm ci
 npx wrangler d1 create zrain-monitor
 ```
 
@@ -36,7 +45,7 @@ Unblock-File .\scripts\Setup-Zrain-Monitor.ps1
 
 6. Answer the setup prompts for Firebase project, Hosting site, Firebase Web API key, Web app ID, admin UID, Cloudflare Workers subdomain and D1 database UUID. The setup script backs up old configuration, writes public config files, checks  the pinned Zrain UI, runs tests, applies migrations and deploys Worker and Hosting. If a service has not been initialized in its console, the script stops with a clear error rather than falsely claiming deployment.
 7. Test `https://<site>.web.app` and `https://zrain-monitor-api.<subdomain>.workers.dev/api/health`. Sign in, create one monitor, then inspect the Cloudflare Cron Trigger and D1 records. Use **real, confirmed Render URLs**. Avoid inventing URL paths such as `/health` if your app does not expose them.
-8. For later releases run `scripts\Deploy-Zrain-Monitor.ps1` after changing code and running local tests.
+8. For normal releases, use `npm run deploy:worker` and/or `npm run deploy:web` separately after tests and explicit review. The legacy combined `scripts\Deploy-Zrain-Monitor.ps1` also applies remote D1 migrations, so it is not intended for a web-only styling or Community Feedback update.
 
 ## Keep-Awake migration: do not turn off UptimeRobot immediately
 
@@ -79,7 +88,7 @@ Account deletion in frontend uses this data deletion API then Firebase Auth dele
 ## Local development and testing
 
 ```powershell
-npm install
+npm ci
 npm run ui:sync
 npm test
 npm run test:release
@@ -95,20 +104,32 @@ No passwords, private keys, Google service-account credentials or GitHub tokens 
 
 ## Repository and deployment policy
 
-This is an **independent project** intended for `github.com/zrain03/zrain-monitor`. Do not merge its database or authentication into Zrain Links. GitHub Actions is used solely for tests, not periodic monitoring. An actual GitHub repository and Cloudflare/Firebase services must be created and connected by the owner; those deployments cannot be inferred from local passing tests.
+This is an **independent product** with an existing **private GitHub repository** at `github.com/zrain03/zrain-monitor`, default branch `master`. Do not combine its database or authentication with Zrain Links. GitHub Actions runs tests and the optional independent-watchdog workflow, not the core monitoring scheduler. Cloudflare Worker + D1 + Cron and Firebase Hosting have been deployed; this documentation does not assert that every authenticated user flow or Telegram delivery was manually verified.
 
-## Publish this independent repository
+## GitHub source sync (existing private repository / Repositori private sedia ada)
 
-The repository does not exist until created under your GitHub account. With GitHub CLI installed and authenticated using `gh auth login`:
+**BM:** Repository `zrain03/zrain-monitor` sudah wujud dengan branch `master`. Jangan jalankan skrip *create repository* lama atau `git init` lagi. Sebelum push, pastikan integrasi Community Feedback daripada commit GitHub `e716227` tidak hilang, buat backup, dan jalankan ujian pada snapshot yang hendak di-commit. Jangan stage backup, `.env`, `.firebase`, `node_modules` atau fail credential. Jangan gunakan force push.
 
-```powershell
-Unblock-File .\scripts\Publish-Zrain-Monitor.ps1
-& .\scripts\Publish-Zrain-Monitor.ps1
-```
+**EN:** The existing private repository is `zrain03/zrain-monitor` on `master`. Do not reinitialize or recreate it. Preserve the Community Feedback changes from GitHub commit `e716227`, back up first, and test the exact source before publishing. Never stage backups, `.env`, `.firebase`, `node_modules` or credentials, and never force-push.
 
-This script initializes Git, commits project files, creates `zrain03/zrain-monitor` (if no origin exists), and pushes the `main` branch. It does not deploy or change existing game repositories. If GitHub CLI is unavailable, create an empty public repository using the GitHub website, then use standard `git init`, `git add`, `git commit`, `git remote add origin`, and `git push -u origin main` steps.
+**BM:** Untuk sync yang menjaga working tree tempatan, gunakan skrip `Publish-Zrain-Monitor-Verified-2026-11-04.ps1` yang dibekalkan bersama pakej ZIP serahan. Skrip menggunakan clone sementara pada tip remote, memasang fail source yang telah diaudit, menjalankan test, memeriksa remote tidak berubah, dan kemudian push biasa. Source aktif tempatan tidak dipadam. Simpan backup sebelum menjalankan operasi.
 
+**EN:** Use the accompanying `Publish-Zrain-Monitor-Verified-2026-11-04.ps1` script to stage an isolated temporary clone at the current remote tip, overlay the audited source, run tests, confirm the remote has not advanced, and perform a normal push. The active project tree is not deleted or reset. Keep the pre-push backup.
 
 ## Public beta access (October 2026)
 
 Anyone with a signed-in, verified Firebase account can create and manage their own monitors when `PUBLIC_MONITOR_CREATION=true` is deployed. Accounts are isolated by verified UID and existing ownership checks. Each user has a limited monitor quota, global beta capacity is 30 with a six-monitor-per-minute scheduler batch (best-effort and subject to Cloudflare Free limits), and supported public HTTPS hosting destinations remain restricted by the existing validation rules. The System Health administrator dashboard remains admin-only. Do not claim that arbitrary private/internal URLs can be monitored.
+
+## 2026-11-04 engineering repair / Pembaikan engineering
+
+**BM:** Source aktif ialah `Zrain/Projects/zrain-monitor/`; arahan pemasangan terkini telah diselaraskan. ZIP yang telah dibaiki mempin Zrain UI kepada commit `a109401fa591afa9f66479fa8d86f1ed1679d70b` dan menggunakan Golden Reference header/footer pada Dashboard, How it works dan Privacy. Dashboard routing, Firebase Auth, Worker, D1, Cron dan Telegram tidak ditukar. Baca `docs/REPAIR_AUDIT_2026-11-04.md` sebelum merge, deploy atau commit.
+
+**EN:** The canonical workspace is `Zrain/Projects/zrain-monitor/`; installation instructions above now reflect the agreed location. The repaired source pins Zrain UI to commit `a109401fa591afa9f66479fa8d86f1ed1679d70b` and uses the Golden Reference header/footer on Dashboard, How it works and Privacy. Dashboard routing, Firebase Auth, Worker, D1, Cron and Telegram are unchanged. Read `docs/REPAIR_AUDIT_2026-11-04.md` before merging, deploying or committing.
+
+## Community feedback preservation / Pengekalan maklum balas komuniti (2026-11-04)
+
+**BM:** Fail `public/feedback-embed.js` dan `public/feedback.css` serta rujukannya pada tiga halaman dipulihkan daripada fungsi yang diterbitkan pada commit GitHub `e716227` (1 November 2026). CSP Firebase hanya membenarkan `api.github.com` dan `avatars.githubusercontent.com` untuk memaparkan komen awam. Komen dipaparkan sebagai teks untuk mengelakkan HTML tidak dipercayai. Pelawat boleh membaca tanpa login, tetapi menulis komen memerlukan akaun GitHub. Moderasi hanya dibuat oleh pengendali repository di GitHub, bukan melalui butang admin khas Monitor. Had rate limit atau ralat GitHub menyebabkan pautan ke thread dipaparkan sebagai fallback.
+
+**EN:** `public/feedback-embed.js`, `public/feedback.css`, and the corresponding references on all three pages restore the Community Feedback functionality introduced in GitHub commit `e716227` (1 November 2026). Firebase CSP narrowly allows `api.github.com` and `avatars.githubusercontent.com` for public comments. Comments render as plain text, not untrusted HTML. Reading requires no login; writing requires a GitHub account. Moderation occurs through GitHub repository permissions, not a Monitor admin endpoint. On GitHub failure or rate limits, users retain a link to the discussion.
+
+**BM / EN:** See `docs/COMPLETION_AUDIT_2026-11-04.md` for the exact verification scope and remaining manual checks.

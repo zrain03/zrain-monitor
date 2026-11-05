@@ -1,28 +1,50 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/api.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 import {authenticate} from "./auth.js";
 import {validateMonitor,nowISO,inMinutes,displayedStatus} from "./validation.js";
 import {probe,recordCheck} from "./engine.js";
 import {emailAlertsReady} from "./email-alerts.js";
 import {getMonitoringHealth,publicMonitoringResponse} from "./monitoring-health.js";
 import {telegramReady,createTelegramLink,disconnectTelegram,sendTelegramTest,TELEGRAM_BOT_USERNAME} from "./telegram-alerts.js";
+// BM: Hasilkan UUID untuk rekod monitor dan operasi secara unik.
+// EN: Generate unique UUIDs for monitor records and operations.
 const id=()=>crypto.randomUUID();
 const json=(body,status=200,headers={})=>new Response(JSON.stringify(body),{status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",...headers}});
+// BM: Balut ralat terhad tanpa dedahkan stack atau token.
+// EN: Wrap a bounded error response without exposing stacks or tokens.
 const bad=(error,status=400)=>json({error},status);
 const validId=value=>/^[0-9a-f-]{36}$/.test(value);
+// BM: Clamp kuota daripada env kepada sempadan keselamatan diketahui.
+// EN: Clamp environment quotas to recognized safety bounds.
 const num=(value,def,max)=>Math.min(max,Math.max(1,Number.parseInt(value||def,10)||def));
 const isAdmin=(user,env)=>Boolean(env.BETA_ADMIN_UID && !env.BETA_ADMIN_UID.startsWith("REPLACE") && user.uid===env.BETA_ADMIN_UID);
 
+// BM: Baca badan JSON dengan had 4 KB; input tidak sah menghasilkan ralat yang diproses oleh API.
+// EN: Read a JSON body capped at 4 KB; invalid input raises an API-handled error.
 async function bodyJSON(request){
   if(Number(request.headers.get("content-length")||0)>4096)throw new Error("Request body too large.");
   const content=await request.text();
   if(content.length>4096)throw new Error("Request body too large.");
   try{return JSON.parse(content);}catch{throw new Error("Invalid JSON request body.");}
 }
+// BM: Dapatkan monitor hanya apabila ID sah dan owner_uid padan dengan pengguna yang disahkan.
+// EN: Retrieve a monitor only when its ID is valid and owner_uid matches the authenticated user.
 async function own(db,uid,monitorId){
   if(!validId(monitorId))return null;
   return db.prepare("SELECT * FROM monitors WHERE id=? AND owner_uid=?").bind(monitorId,uid).first();
 }
+// BM: Keluarkan rahsia lease dalaman sebelum serializing monitor kepada pengguna.
+// EN: Remove internal lease secrets before serializing a monitor for the owner.
 function monitorOut(row){return {...row,display_status:displayedStatus(row),lease_token:undefined,lease_until:undefined};}
 
+// BM: Proses laluan Worker: CORS, autentikasi, autorisasi pemilik, kuota dan respons JSON.
+// EN: Handle Worker routes: CORS, authentication, owner authorization, quotas and JSON responses.
 export async function handleAPI(request,env,dependencies={}){
   const origin=request.headers.get("origin");
   const permitted=origin && origin===env.ALLOWED_ORIGIN;

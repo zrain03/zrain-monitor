@@ -1,8 +1,20 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/engine.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 import {validateTarget,nowISO,inMinutes} from "./validation.js";
 import {transition} from "./state.js";
+// BM: Hasilkan identiti lease/peristiwa yang unik untuk operasi scheduler.
+// EN: Generate unique lease and event identifiers for scheduler work.
 const uid=()=>crypto.randomUUID();
 const RUN_SIZE=6;
 
+// BM: Sahkan sasaran HTTPS sekali lagi, buat GET terkawal dan jangan simpan response body.
+// EN: Revalidate the HTTPS target, perform a bounded GET and never store the response body.
 export async function probe(url,env,fetcher=fetch){
   // Recheck before every request, including after a monitor is edited.
   const safe=validateTarget(url,env);
@@ -21,6 +33,8 @@ export async function probe(url,env,fetcher=fetch){
   return {success,http_status,error_code,duration_ms:Math.max(0,Date.now()-started),checked_at:nowISO()};
 }
 
+// BM: Rekod keputusan menggunakan lease aktif, peralihan status, insiden dan outbox notifikasi atomik.
+// EN: Record the result using active leases, status transition, incidents and atomic notification outboxes.
 export async function recordCheck(db,monitor,result,mode="scheduled"){
   const ownership=await db.prepare("SELECT lease_token,state FROM monitors WHERE id=?").bind(monitor.id).first();
   if(!ownership || ownership.state!=="ACTIVE" || ownership.lease_token!==monitor.lease_token) {
@@ -72,11 +86,15 @@ export async function recordCheck(db,monitor,result,mode="scheduled"){
   return next;
 }
 
+// BM: Semak satu monitor dengan mengunci lease dan memulangkan keputusan yang boleh dilaporkan.
+// EN: Check one monitor under a lease and return a reportable result.
 export async function checkOne(db,monitor,env,fetcher=fetch){
   const result=await probe(monitor.url,env,fetcher);
   await recordCheck(db,monitor,result);
   return result;
 }
+// BM: Jalankan batch scheduler terhad untuk monitor yang telah tiba masa tanpa membebankan Free tier.
+// EN: Run a bounded scheduler batch for due monitors without overloading the free tier.
 export async function runScheduler(env,fetcher=fetch){
   const db=env.DB,started=nowISO(),runId=uid();
   await db.prepare(`INSERT INTO scheduler_runs(id,started_at) VALUES(?,?)`).bind(runId,started).run();

@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/google-auth-errors.js
+ * BM: Perilaku antaramuka atau konfigurasi frontend Monitor.
+ * EN: Monitor frontend behavior or configuration.
+ */
 // Firebase error descriptions safe to display to users. Never echo raw
 // OAuth credentials, tokens, stack traces or account-identifying details.
 const GOOGLE_ERRORS = Object.freeze({

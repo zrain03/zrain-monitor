@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/style.css
+ * BM: Gaya halaman Monitor, komponen dan responsiviti.
+ * EN: Monitor page, component and responsive styling.
+ */
 :root{--paper:#fffaf7;--warm:#fff4ed;--card:#fffefa;--ink:#192534;--muted:#738093;--terra:#c45335;--edge:#eedfd5;--green:#2e8b61;--red:#b84748}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 Inter,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}button:disabled{opacity:.56;cursor:not-allowed}[hidden]{display:none!important}:focus-visible{outline:3px solid #da876c;outline-offset:3px}.skip{position:absolute;top:-100px;left:10px}.skip:focus{top:10px;z-index:30}.container{width:min(1160px,calc(100% - 48px));margin:auto}.zrain-header .zrain-header__inner{gap:24px}.zrain-brand__home{display:flex;align-items:center;gap:8px;text-decoration:none}.zrain-brand__home strong{font-size:19px}.zrain-header .topnav{display:flex;gap:22px}.zrain-header .topnav a{color:#5a6979;text-decoration:none;padding:22px 0}.zrain-header .topnav a.current{color:var(--terra);box-shadow:inset 0 -3px var(--terra)}.account-actions{display:flex;align-items:center;gap:10px}.account-actions span{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:12px}
 .button{border:1px solid transparent;border-radius:12px;padding:12px 17px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:750;font-size:13px;min-height:44px;white-space:nowrap}.button-primary{background:var(--terra);color:#fff}.button-primary:hover{background:#a84129}.button-outline{background:#fff;border-color:var(--edge);color:#7c4433}.button-outline:hover{background:#fff2ea}.full{width:100%}.danger{color:var(--red)}.eyebrow{margin:0 0 7px;font-size:11px;font-weight:850;letter-spacing:1.8px;color:var(--terra)}.muted{color:var(--muted)}.small{font-size:12px}

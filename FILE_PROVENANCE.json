@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "product": "Zrain Monitor",
+  "developer": "Zrain",
+  "generated_on": "2026-11-04",
+  "basis": "Earliest path-level Git addition where available; unverified is not substituted with an invented date.",
+  "notes": [
+    "Zrain UI files keep upstream provenance headers from the supplied @zrain/ui archive.",
+    "All source entries include developer, creation and last-update evidence/status.",
+    "An updated date represents content edits in this repair, not ZIP extraction or local test execution.",
+    "The registry inventories itself without a self-referential hash.",
+    "Historical backup directories and .git metadata remain in the original uploaded ZIP and are intentionally not part of active release source.",
+    "Community Feedback code originated at GitHub commit e716227 (2026-11-01), reconciled into repaired Monitor source on 2026-11-04.",
+    "Community Feedback has no privileged browser token, and generated Firebase/Worker output remains excluded."
+  ],
+  "files": {
+    ".github/workflows/checks.yml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e52c8a33d42bcd7ac8ea0e3d1375972eca9ce4177673dd6d0e483521bac0bda0"
+    },
+    ".github/workflows/independent-watchdog.yml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "28ed24b762d80708365d8101b6178aa71fef663fd17be760d1aee551151856ad"
+    },
+    ".github/workflows/tests.yml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "804ef808c7b62907d6508eb5105c8e902f9a1a9fd69e37ccc0f92cf2ba157d1f"
+    },
+    ".gitignore": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e7a71ab0018f5f4da7dab10d42623e6e2e41b1a1f359270918124276975603eb"
+    },
+    "FILE_PROVENANCE.json": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during this repair",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "registry generated during this repair",
+      "sha256": null,
+      "note": "self hash intentionally omitted"
+    },
+    "README.md": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "218a9f6b20368bab47169855f53c54db116253e2f41f5f91eff078ed8eac3b1b"
+    },
+    "Zrain-Fast-E2E-Edge-Ready.mjs": {
+      "developer": "Zrain",
+      "created": "Unknown / Unverified",
+      "created_basis": "no verifiable initial authoring record",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "73d18786257c40981b25235647df43779d37eb94bb1f595f26cf6fa121f2fcda"
+    },
+    "Zrain-Fast-E2E-Local.mjs": {
+      "developer": "Zrain",
+      "created": "Unknown / Unverified",
+      "created_basis": "no verifiable initial authoring record",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "401e1a852cdf3223f48fd447b6d06b9e45d7604c2acc5a676f5dba49ccde0434"
+    },
+    "docs/COMPLETION_AUDIT_2026-11-04.md": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "new file created for this release",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "5e0fb99e2febbc25e41fe7f6f635be957781fbeec494edc57f35f8b32fe1ed53"
+    },
+    "docs/REPAIR_AUDIT_2026-11-04.md": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during current repair",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "21188674f32889986a933aca53fc87210eecf6e27c5786fea7697e046624edbe"
+    },
+    "firebase.json": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "4d5a26bfd40286969b1dd1da4709da4f689032cd22036c3c1a68897588e64afe"
+    },
+    "migrations/0001_init.sql": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "54cc61b071eb5fec2f6faf2c5be87781179886260167f89159d9ef7bab003550"
+    },
+    "migrations/0002_email_alerts.sql": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "28efc778c18f5bb10fc38389e2176913c71cdbe3291089e16ab5bb5c42dc34d2"
+    },
+    "migrations/0003_telegram_alerts.sql": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "fa242d7c5147760b6e56fd949062005e81e47a942f004ee7e34d464158f239b2"
+    },
+    "migrations/0004_reliability.sql": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "c7c41e23a86bebd00661b4ecb81a05163da8af37d810597bdb33bbb7131e7869"
+    },
+    "ops/README-OPERATIONS.md": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "aed5b686b382dbc0b327aefbcbf85b87bd3ef5110b2f5f620510b50423332eaf"
+    },
+    "ops/e2e-fixture/worker.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e8c38830b6db5e26a93528e44a062d438bd62d711126b6866c4490d724b7eecc"
+    },
+    "ops/e2e-fixture/wrangler.toml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "8f465ec05dac617c23fd81b63b781c746c00cc90fcf2c943276dd8e72046dd23"
+    },
+    "ops/independent-watchdog.mjs": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "0d3808733380fc72929707d3aa43eadc512fd362b019d055d6f1a6f6d5e9a2da"
+    },
+    "ops/independent-watchdog.test.mjs": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "4e8296a96fb25037eb4af0223d1ce66578f1634927bdc9b293db5f97eab8e62e"
+    },
+    "ops/verify-production.ps1": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e08e63977821dbb5af2a5d4fae8214913b69c7e6a51747b9ce6fd14086563683"
+    },
+    "package-lock.json": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "529a92fb7048f967f4698af65ea9ed5561cc578e4d6965883bff2cbb8d726955"
+    },
+    "package.json": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "a8c5a29f6e1b8a9d3b1e830b05948eda667d868c75db6415354d4306b2b2873a"
+    },
+    "public/app.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "754b6fa16281249260410f63735ecad2bb0736f9d1705f35789bef8f74e1aa86"
+    },
+    "public/auth-links.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "1f6ee41c4e46d87c41efb2e4b8642fed66f8d337f435d3aaa4c5bd53c5dc85d9"
+    },
+    "public/brand.css": {
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "9eb049a3052c6945c68525287dc9614318c0504644f2a39fefb86fc3a0f01770"
+    },
+    "public/feedback-embed.js": {
+      "developer": "Zrain",
+      "created": "2026-11-01",
+      "created_basis": "GitHub commit e716227a9be4eb2aace9c50e2eff55d03917e7e7",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this release",
+      "sha256": "97db1fbe56162cb8f2f683833629c4b1ab840c663981803afb57b5b0298a2b76"
+    },
+    "public/feedback.css": {
+      "developer": "Zrain",
+      "created": "2026-11-01",
+      "created_basis": "GitHub commit e716227a9be4eb2aace9c50e2eff55d03917e7e7",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this release",
+      "sha256": "51a167e5033e1026eb635398777be2c22f1306e89bad06e18ab8c9ee3f57d91a"
+    },
+    "public/firebase-config.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "13ce5c901ae6765d0f96d591eaa39d338fc70e276039c87c375d7538b3272a96"
+    },
+    "public/google-auth-errors.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e8d40f543d2486310bbd9ce6a8b268ba0c349145100b2b9e7d5204bea7fa234c"
+    },
+    "public/google775dd4a575330e48.html": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-10-30",
+      "last_updated_basis": "last available committed edit",
+      "sha256": "0b7b1f6ab172dc35668cbde532542d8b7f1b8e86e6c488bed31e2dacbf160f2d"
+    },
+    "public/how-it-works.html": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "1514b92ed6b6ef42e1beee6be824cd2bfc615fe05b42718128d3a731f2ffd23c"
+    },
+    "public/index.html": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "d3c703bf6c63e2c6c94d1b5216f6e8ddc5c832d6f4e032d77862d8b4bf08cd63"
+    },
+    "public/monitor-brand-alignment.css": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "new repair source or supplied UI upstream evidence",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "5e903dd9aa65400d7998819b6892d5bbe2ceb77b7d4271892a57aeec9acbf574"
+    },
+    "public/monitor-report-brand-v1.0.14.6.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "db94f19ebf3547c03668f4d591d466c495e3beea3bc110e40b8b54efaa68d056"
+    },
+    "public/monitor-report-print-v1.0.14.3.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "d5fa2ee223757ce974fd9def68b60195d3338a9dcd8c0a06272b4a8b3099a634"
+    },
+    "public/monitor-report-public-v1.0.15.2.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "3252f1af5a164a9357eab597565dd27b9f79b09bedd1ef7e4caaa9a2f8d18c95"
+    },
+    "public/monitor-report-ui-v1.0.13.2.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "7bba658f3672e10c0683891fdeca135363eed49a008fef13e7b56c64e829c156"
+    },
+    "public/monitor-report.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "b7dbb21d77c3d752be1e8a859b1c60df17a64289fd193a9dcaf4fa9c4354fe9d"
+    },
+    "public/monitor-report.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "c9a4ba254c158ab767b087871b5995ba719bfa481f31acfd2f53040418141f45"
+    },
+    "public/monitor-scrollspy.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "45d6a212ea959ac2820fd898c41155cffb1a91683d86a9ac2c092125eb229deb"
+    },
+    "public/notification-card-v1.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "0ae48da7e019b76ecad0aee73d32e25a8e438fff4aa1ded471ee8548c01b364a"
+    },
+    "public/privacy-policy.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "26b684c252594dc397fb60670d0662d2629c4bae9ad601a27fa8a76bace940dd"
+    },
+    "public/privacy.html": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "aeb73086b19a09e57e0a0cf7aed8e8e76cb1c3126180e3ce932a793740cd2743"
+    },
+    "public/public-clarity-v1.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "2a3837d97cbbac6089f6034489ddd4dd5f9f4a940826d7ad03364697dc0c065b"
+    },
+    "public/reliability-v1.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e6b8ebf3ad31a025512fe9361a11a8ebbfbbe39fd56ecaadd1e14572fe71445a"
+    },
+    "public/robots.txt": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-10-30",
+      "last_updated_basis": "last available committed edit",
+      "sha256": "1d20861e486419b570a6146aa916a1ce78f44e4c67e3ed5c2b7fbae1d98feb0a"
+    },
+    "public/settings-experience-v1.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "bd015bf70d4fa4acca820ff3c31f49beb19135475576e86d9e89c626408ef9c5"
+    },
+    "public/sitemap.xml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-10-30",
+      "last_updated_basis": "last available committed edit",
+      "sha256": "8581ba4bbeb1ade2bf5c6cdb34eefe09c7f8c6388d76a54471c57e6935dfae65"
+    },
+    "public/style.css": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "bd55fa9d7bade669d68572e40108337d25ae2fe1f74859d4c562c4fdac09025a"
+    },
+    "public/zrain-logo.webp": {
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-10-30",
+      "last_updated_basis": "last available committed edit",
+      "sha256": "e748930a6e30c3e13ebdd0a51b63df2a2b3d631cbae8777cb95eb046aa36f6ee"
+    },
+    "public/zrain-ui-config.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "1f8a5234fe3ecf4bf629866256bd3411dbe7cd0fcd9bd9e0f72d7969db42075c"
+    },
+    "public/zrain-ui.js": {
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "3f0ba10b3255c8b9206bf254d6cf467bb667dd59a5b953c9781729e7fedb7383"
+    },
+    "scripts/Deploy-Zrain-Monitor.ps1": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "d5aaa5b4f9ef000db8339ea96dee9804a19330024e968ef4a3e6dd9f8acee19c"
+    },
+    "scripts/Publish-Zrain-Monitor.ps1": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "65ff5c2aa51edc91fa02c72919042d4f07a23f7f38ba984cad1e31ee2862d5ca"
+    },
+    "scripts/Setup-Zrain-Monitor-Local-Git.ps1": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "73d9579cf91d4f2f71fc765dc46cef52cf7a95d134ecfe1d7d94994fbd719c42"
+    },
+    "scripts/Setup-Zrain-Monitor.ps1": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "60d1edee521c862c3a37cd562d7840c0be02409e17e6b999c34deb74b69e53c5"
+    },
+    "scripts/sync-zrain-ui.mjs": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "bdf60d0aee8a8c7ed73e22b682a4c48a6ed54965ef6dc4b0b3239a98ceb22773"
+    },
+    "src/api.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "211eb466ed9fa9c8e5c57b558a8bb92a986d15a7064ac0591e45a48b208fad5e"
+    },
+    "src/auth.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "440d91a5911f7b14d3a6fc6d38500a43d1eda58cb0667d3b6cf10dbf4bdc89b4"
+    },
+    "src/email-alerts.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "ed3dec0df976af812e382acbd1df8b0ccc5dce5d2d52c83f865e3e039e9236e1"
+    },
+    "src/engine.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "ea93dc2686f0f14a2c530f900155ee679e0f047182bd67482e8a0a66921d0a57"
+    },
+    "src/monitoring-health.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "5d9d149e8f8c1663111c7f555e0ca776a386301e40e251db23885d2bf212948c"
+    },
+    "src/state.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "f2404850acf3a57a13af6976cff0706103a1dd6ff7a5681f6239801257015648"
+    },
+    "src/telegram-alerts.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "957238d0399c3a0c1d55183dc738bfc0e978967f565b43df33a9373dba6fe83d"
+    },
+    "src/validation.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "7036ce5ebe1b21c7c0c48cf72f7aeb694f2522670a8338e27d1201e6c646059b"
+    },
+    "src/worker.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
+      "sha256": "73095b2c1ce9f36e56c3156c335384439dedc1018198dd97813ade1d8c036494"
+    },
+    "test/account-ui.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "11b538d26890c2c41bf38f67fdd3031b3ac226a1eb987c0c17d4e396af17d06c"
+    },
+    "test/api.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "de4fab2b8b362000c3685bf2efe450bf7fe49119ec95221d328ba0a806ffdf10"
+    },
+    "test/auth-links.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "3bf89e00640a6ce1722625383388e731ccc8dbdb3492a300566f2f891c775d58"
+    },
+    "test/auth.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "cc74cbfdca4be7547d0cc6531f2b04f3051f25b33fc543be9cac0a4cda6a2a97"
+    },
+    "test/community-feedback.test.js": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "new file created for this release",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this release",
+      "sha256": "6ff8bee07639233fc25f4f4646170763287c86522e937ae61468cf1aae334422"
+    },
+    "test/email-alerts.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e0bd716e0fc6c0396f1998d42c8e604a9141672c8cb53bf9ed7a4eb3b4fe3a03"
+    },
+    "test/expanded-capacity.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "3e6e3a61bdf614072ffb9d5aec8d572275f31e5841366ebbdbaf82bd07b24c28"
+    },
+    "test/google-auth-errors.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "a38ac2d2b1376ccf6876c51ffb8714b848d633380cd427b95d4956506c454c98"
+    },
+    "test/google-csp.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "12c75bfbfa54150522b2c54ae7671cbaceae4500db6ef562b8c1e86fffbbf98c"
+    },
+    "test/integration.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "3d8f59fd8add9b631f960314c398e53586f624280305fc7c620799ee17e3e953"
+    },
+    "test/monitor-brand-contract.test.js": {
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "created_basis": "created during current repair",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated during current repair",
+      "sha256": "ffbe9208498c37eb0b846a79cbace80486565caf710711e25ef22b8d1717b205"
+    },
+    "test/notification-card.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "7c4afe87e99258442af85e5c1677d300eed45a8ed1b74627472d183ac81d704c"
+    },
+    "test/public-clarity.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "a63bfb493242415247b826f92f17365c4bdeeea0bb8ba4ffb5d813340d510086"
+    },
+    "test/public-monitor-creation.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "7a9609adef6514e8ca7da50c908bc52053e2cd97281c967148740e4297b9d8f2"
+    },
+    "test/reliability.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "e2bcedc525e0fcdbaad982e55d47d91906f59c557664a12cd092ad8ebd4b11dd"
+    },
+    "test/scrollspy.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "5d18374b09d764d45d8237e3b1d8efc10644829b869a232b2bfd8597a3e1cbe6"
+    },
+    "test/settings-experience.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "7b15846dc700ea59a900cccedd0950b8084d1dc3b1af0d0a5f0dfddff08158e4"
+    },
+    "test/site.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "b4507cc3dd2ef43772294794477c2a621b839620c10003c14433a8aca8926cce"
+    },
+    "test/telegram-alerts.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "b92b44ad81a68567570584b042e8cff12ac893671202ebee842399473fab875b"
+    },
+    "test/validation.test.js": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "076702d986d767e12a95f324f3f9e8a40ea55a45710922e7969105b3dd9bfb2f"
+    },
+    "wrangler.toml": {
+      "developer": "Zrain",
+      "created": "2026-10-30",
+      "created_basis": "earliest path-level Git introduction",
+      "last_updated": "2026-11-04",
+      "last_updated_basis": "content updated in this repair",
+      "sha256": "4d2d07de6f244a595ae8d1e9e26cfb631ccd573a29657dec165b6555858acd48"
+    }
+  }
+}

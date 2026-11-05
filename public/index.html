@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: public/index.html
+BM: Halaman HTML Zrain Monitor dan kandungan berkaitan pengguna.
+EN: Zrain Monitor HTML page and user-facing content.
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -53,7 +61,10 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/feedback.css">
+  <link rel="stylesheet" href="/monitor-brand-alignment.css?v=20261104">
+  <!-- BM: CSS komuniti diasingkan daripada UI monitoring. -->
+  <!-- EN: Community styling stays isolated from monitoring UI. -->
+  <link rel="stylesheet" href="/feedback.css?v=20261104">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -165,5 +176,7 @@
 </dialog>
 <dialog id="create-dialog" class="dialog" aria-labelledby="create-heading"><div class="modal-heading"><div><p class="eyebrow">NEW MONITOR</p><h2 id="create-heading">Monitor a service</h2></div><button class="close" data-close="create-dialog" aria-label="Close">×</button></div><form id="create-form"><label>Monitor name<input id="create-name" type="text" minlength="2" maxlength="70" required placeholder="My Website or API"></label><label>Public HTTPS URL<input id="create-url" type="url" required placeholder="https://example.onrender.com/health"></label><label>Purpose<select id="create-purpose"><option value="uptime">Uptime Monitoring</option><option value="keepawake">Keep-Awake Monitoring</option></select></label><div class="info-card">Checks run approximately every 5 minutes. Requests cannot guarantee that hosting will never restart or sleep. Beta monitors are limited to approved public HTTPS providers.</div><p id="create-message" class="form-message" role="status"></p><button type="submit" class="button button-primary full" id="create-submit">Create monitor</button></form></dialog>
 <footer class="zrain-footer"><div class="zrain-footer__inner"><div class="zrain-footer__identity"><a href="https://zrain.web.app" class="zrain-footer__home"><img src="/zrain-logo.webp" class="zrain-footer__logo" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a></div><div class="zrain-footer__links"><a href="/how-it-works.html">How it works</a><a href="/privacy.html">Privacy</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div></div></footer>
-  <script defer src="/feedback-embed.js" data-product="zrain-monitor"></script>
+  <!-- BM: Muat komen sebenar daripada thread khusus Zrain Monitor. -->
+  <!-- EN: Load genuine comments from the dedicated Zrain Monitor thread. -->
+  <script defer src="/feedback-embed.js?v=20261104" data-product="zrain-monitor"></script>
 </body></html>

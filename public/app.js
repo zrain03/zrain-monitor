@@ -1,3 +1,11 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: public/app.js
+ * BM: Perilaku antaramuka atau konfigurasi frontend Monitor.
+ * EN: Monitor frontend behavior or configuration.
+ */
 import {initializeApp} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 import {getAuth,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,createUserWithEmailAndPassword,
   signInWithEmailAndPassword,sendPasswordResetEmail,sendEmailVerification,signOut,deleteUser,
@@ -8,10 +16,16 @@ const $=id=>document.getElementById(id);
 const configured=!Object.values(FIREBASE_CONFIG).some(v=>String(v).includes("REPLACE_WITH"))&&!API_ORIGIN.includes("REPLACE_WITH");
 let auth=null,user=null,profile=null,monitors=[],currentId=null,authMode="signin",refreshing=false;
 const MY_TIME=new Intl.DateTimeFormat("en-MY",{timeZone:"Asia/Kuala_Lumpur",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});
+// BM: Tukar tarikh UTC kepada paparan MYT dengan pecahan milisaat hanya jika input menyediakannya.
+// EN: Format UTC dates for Malaysian time, retaining millisecond precision only when supplied.
 const time=value=>{if(!value)return "Not checked yet";const d=new Date(value);if(!Number.isFinite(d.getTime()))return "Unknown timestamp";const hasFraction=typeof value==="string"&&/\.\d{1,9}(?:(?:Z)|(?:[+-]\d{2}:?\d{2}))?$/.test(value);return MY_TIME.format(d)+(hasFraction?"."+String(d.getMilliseconds()).padStart(3,"0"):"")+" MYT";};
 const text=(tag,str,cls)=>{const e=document.createElement(tag);if(cls)e.className=cls;e.textContent=String(str??"");return e;};
+// BM: Tambah nod anak dan kembalikan parent untuk membina struktur UI ringkas.
+// EN: Append children and return their parent for small UI compositions.
 const add=(parent,...children)=>{parent.append(...children);return parent;};
 const button=(label,fn,cls="button button-outline")=>{const b=text("button",label,cls);b.type="button";b.addEventListener("click",fn);return b;};
+// BM: Paparkan maklumat atau ralat dalam banner berperanan status tanpa menyentuh auth.
+// EN: Display information or errors in the status banner without changing authentication.
 const info=(message,bad=false)=>{const b=$("banner");b.hidden=!message;b.textContent=message||"";b.style.borderColor=bad?"#e9b6b6":"";b.style.color=bad?"#a33838":"";};
 const errorMessage=error=>({"auth/email-already-in-use":"This email already has an account.","auth/invalid-credential":"Incorrect email or password.","auth/popup-closed-by-user":"Google sign-in was cancelled.","auth/requires-recent-login":"For account deletion, sign out and sign in again first.",
   "auth/too-many-requests":"Too many attempts. Please try again later.",
@@ -19,6 +33,8 @@ const errorMessage=error=>({"auth/email-already-in-use":"This email already has 
   "auth/operation-not-allowed":"This sign-in method is not enabled. Please contact Zrain support.",
   "auth/unauthorized-domain":"This website domain is not authorized for Google sign-in.",
   "auth/network-request-failed":"Network error. Check your connection and try again."}[error?.code]||error?.message||"Something went wrong.");
+// BM: Panggil Worker API menggunakan token pengguna aktif; pulangkan JSON atau ralat selamat.
+// EN: Call the Worker API with the current user token; return JSON or a safe error.
 async function api(path,options={}){
   if(!user)throw new Error("Please sign in first.");
   const token=await user.getIdToken();
@@ -27,6 +43,8 @@ async function api(path,options={}){
   if(!response.ok)throw new Error(data.error||`Request failed (${response.status})`);
   return data;
 }
+// BM: Selaraskan visibility dashboard, tindakan akaun dan status log masuk; tiada akses admin diberikan di sini.
+// EN: Synchronize dashboard/account visibility and signed-in state; this does not grant admin rights.
 function setAuthState(logged){
   $("dashboard").hidden=!logged;$("signedout").hidden=logged;$("hero").hidden=logged;
   $("auth-open").hidden=logged;$("signout").hidden=!logged;
@@ -37,6 +55,8 @@ function setAuthState(logged){
 }
 let telegramPendingLink = null;
 
+// BM: Bawa pengguna ke senarai monitor selepas menekan tindakan sambung Telegram.
+// EN: Focus the monitor list after the user chooses to configure Telegram alerts.
 function openMonitorChoices(){
   if(!monitors.length){
     $("add-open").scrollIntoView({behavior:"smooth",block:"center"});
@@ -51,6 +71,8 @@ function openMonitorChoices(){
   info("In Active monitors, select your website name. Its alert controls will appear under Monitor details.");
 }
 
+// BM: Ambil status sambungan Telegram bagi owner dan bina semula kawalan bergantung pada hasil API.
+// EN: Fetch owner-scoped Telegram connection state and render controls from the API result.
 async function loadTelegramSettings(checkConnection=false){
   const section=$("telegram-settings");
   if(!section||!user)return;
@@ -172,6 +194,8 @@ async function loadTelegramSettings(checkConnection=false){
     section.replaceChildren(text("p","Unable to check Telegram connection: "+errorMessage(e),"telegram-feedback"));
   }
 }
+// BM: Muat data owner dan monitor selepas auth, kemudian kemas kini workspace tanpa mendedahkan akaun lain.
+// EN: Load authenticated owner data and monitors, then refresh the private workspace.
 async function load(){
   if(refreshing||!user)return;
   refreshing=true;$("refresh-all").disabled=true;
@@ -203,6 +227,8 @@ async function load(){
     }
   }catch(e){info(errorMessage(e),true);}finally{refreshing=false;$("refresh-all").disabled=false;}
 }
+// BM: Paparkan senarai monitor yang sudah diperoleh daripada API owner sahaja.
+// EN: Render the monitor list previously fetched from owner-authorized API routes.
 function renderList(){
   const list=$("monitor-list");list.replaceChildren();
   const counts={UP:0,DOWN:0,VERIFYING:0,other:0};
@@ -221,6 +247,8 @@ function renderList(){
     add(card,glyph,main,status);card.append(text("span","Manage alerts","monitor-manage-hint"));list.append(card);
   }
 }
+// BM: Paparkan sejarah notifikasi dalaman tanpa memerlukan penghantaran Telegram sebenar.
+// EN: Render private in-app notification history independently of actual Telegram delivery.
 function renderNotifications(rows){
   const list=$("notification-list");list.replaceChildren();
   if(!rows.length){list.append(text("div","No incidents yet. Notifications appear after confirmed downtime and recovery.","empty-state"));return;}
@@ -230,6 +258,8 @@ function renderNotifications(rows){
     add(item,text("h3",`${title} • ${name}`),text("p",`${time(notification.created_at)}${notification.read_at?"":" • Unread"}`));list.append(item);
   }
 }
+// BM: Paparkan metrik ringkas dengan label yang boleh difahami.
+// EN: Build an accessible labeled metric cell.
 function statCell(label,value){const c=text("div","","mini-stat");return add(c,text("span",label),text("strong",value));}
 function latencyChart(rows){
   const container=text("div","","latency-chart");
@@ -255,6 +285,8 @@ function latencyChart(rows){
   add(container,text("p",`Last ${samples.length} checks • Max ${max} ms`,"muted small"),svg);
   return container;
 }
+// BM: Baca butiran dan sejarah bagi monitor yang dipilih; parameter scroll mengawal navigasi sahaja.
+// EN: Load selected monitor detail/history; scroll controls navigation only.
 async function selectMonitor(id,scroll=true){
   const mon=monitors.find(m=>m.id===id);if(!mon)return;
   currentId=id;const pane=$("monitor-detail");pane.replaceChildren(text("div","Loading monitor details…","empty-state"));
@@ -377,6 +409,8 @@ async function selectMonitor(id,scroll=true){
     if(scroll){$("monitors").scrollIntoView({behavior:"smooth",block:"start"});updateNav("monitors");}
   }catch(e){pane.replaceChildren(text("div",errorMessage(e),"empty-state"));}
 }
+// BM: Muat diagnostik scheduler khas pentadbir melalui authorization backend, bukan UI semata-mata.
+// EN: Load admin-only scheduler diagnostics through backend authorization, not UI hiding alone.
 async function loadSystem(){
   if(!profile?.admin)return;
   const container=$("system-content");
@@ -397,19 +431,29 @@ async function loadSystem(){
     if(last?.error)container.append(text('p','Latest scheduler warning: '+last.error,'muted small'));
   }catch(e){container.textContent=errorMessage(e);}
 }
+// BM: Tandakan hanya tab yang sedang aktif dan kemas kini aria-current untuk accessibility.
+// EN: Mark only the active tab and synchronize aria-current for accessibility.
 function updateNav(id){document.querySelectorAll(".topnav a").forEach(a=>{const current=a.dataset.view===id;a.classList.toggle("current",current);if(current)a.setAttribute("aria-current","location");else a.removeAttribute("aria-current");});}
 function openDialog(id){const dlg=$(id);if(!dlg.open)dlg.showModal();}
+// BM: Tutup dialog hanya jika ia benar-benar terbuka.
+// EN: Close a dialog only when it is actually open.
 function closeDialog(id){const dlg=$(id);if(dlg.open)dlg.close();}
 // Authentication UI follows the tested Zrain Links flows, while Monitor
 // keeps its own Firebase project, backend and per-user security boundaries.
 const authDialog=$("auth-dialog");
+// BM: Tukar atribut hidden pada elemen yang sudah wujud.
+// EN: Toggle the hidden attribute of an existing element.
 const show=(id,yes)=>{$(id).hidden=!yes;};
 function message(id,value,ok=false){const el=$(id);el.textContent=value||"";el.classList.toggle("ok",ok);}
+// BM: Selaraskan tajuk dan kapsyen dialog untuk mod auth semasa.
+// EN: Synchronize authentication dialog heading and caption for the current mode.
 function authHeading(title,caption){$("auth-heading").textContent=title;$("auth-caption").textContent=caption;}
 function authFormView(){
   show("verification-panel",false);show("reset-password-panel",false);
   show("auth-tabs",true);show("auth-form",true);show("google-auth-section",true);
 }
+// BM: Paparkan langkah email verification tanpa mendakwa mesej telah dihantar semula.
+// EN: Show email-verification guidance without claiming that a new email was sent.
 function verificationView(account){
   authHeading("Verify your email","One quick step before you can manage your monitors.");
   $("verify-email").textContent=account.email||"your email";
@@ -417,6 +461,8 @@ function verificationView(account){
   show("auth-tabs",false);show("auth-form",false);show("google-auth-section",false);
   message("verification-message","");openDialog("auth-dialog");
 }
+// BM: Tukar mod sign in/sign up dengan memelihara kawalan Firebase Auth.
+// EN: Change sign-in/sign-up view while preserving Firebase authentication controls.
 function setMode(mode){
   authMode=mode;authFormView();
   for(const tab of document.querySelectorAll("[data-auth-mode]")){
@@ -441,10 +487,14 @@ function setMode(mode){
   }
   show("google-redirect",false);message("auth-message","");message("google-message","");
 }
+// BM: Buka modal auth pada keadaan awal yang sesuai untuk pengguna.
+// EN: Open the authentication modal in the appropriate initial view.
 function openAuth(){
   if(auth?.currentUser && !auth.currentUser.emailVerified){verificationView(auth.currentUser);return;}
   setMode("signin");openDialog("auth-dialog");$("auth-email").focus({preventScroll:true});
 }
+// BM: Tukar dialog untuk aliran reset kata laluan.
+// EN: Switch the dialog to the password-reset flow.
 function resetPasswordView(){
   authHeading("Reset your password","We'll email you a secure password reset link.");
   show("verification-panel",false);show("auth-tabs",false);show("auth-form",false);
@@ -452,15 +502,21 @@ function resetPasswordView(){
   $("reset-email").value=$("auth-email").value.trim();message("reset-message","");
   $("reset-email").focus({preventScroll:true});
 }
+// BM: Tukar jenis input kata laluan dan label butang tanpa mengubah nilainya.
+// EN: Toggle password input visibility and button labeling without changing its value.
 function toggleVisibility(inputId,buttonId){
   const input=$(inputId),button=$(buttonId),showing=input.type==="password";
   input.type=showing?"text":"password";button.textContent=showing?"Hide":"Show";
   button.setAttribute("aria-pressed",String(showing));
   button.setAttribute("aria-label",(showing?"Hide ":"Show ")+(inputId==="confirm-password"?"confirmation password":"password"));
 }
+// BM: Aktifkan pengalaman owner selepas token Firebase dan status pengesahan dikemas kini.
+// EN: Activate owner UI after Firebase token and verification state are refreshed.
 async function activateVerifiedUser(){
   info("");setAuthState(true);closeDialog("auth-dialog");await load();
 }
+// BM: Sediakan Firebase, event handler dan status awal selepas DOM boleh digunakan.
+// EN: Initialize Firebase, event handlers and initial state when the DOM is ready.
 async function ready(){
   setMode("signin");
   if(!configured){info("Setup needed: configure Firebase and Cloudflare Worker in firebase-config.js before sign-in.",true);$("hero-start").disabled=true;return;}

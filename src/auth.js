@@ -1,9 +1,21 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/auth.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 const CERTS_URL="https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com";
 let cached={keys:[],expires:0};
+// BM: Nyahkod bahagian JWT bertanda base64url untuk pengesahan claim/signature.
+// EN: Decode the base64url JWT segment for claim and signature verification.
 function fromBase64Url(part){
   const bin=atob(part.replace(/-/g,"+").replace(/_/g,"/").padEnd(Math.ceil(part.length/4)*4,"="));
   return Uint8Array.from(bin,c=>c.charCodeAt(0));
 }
+// BM: Sahkan tuntutan ID token, termasuk projek, penerbit, tempoh sah dan pengguna.
+// EN: Validate ID token claims including project, issuer, expiration and user.
 export function verifyClaims(header,payload,projectId,now=Math.floor(Date.now()/1000)){
   if(header?.alg!=="RS256" || typeof header.kid!=="string" || !header.kid)throw new Error("Invalid token algorithm.");
   if(!projectId || projectId.startsWith("REPLACE"))throw new Error("Authentication is not configured.");
@@ -17,6 +29,8 @@ export function verifyClaims(header,payload,projectId,now=Math.floor(Date.now()/
   if(payload.email_verified!==true)throw new Error("Verify your email address before using Monitor.");
   return {uid:payload.sub,email:typeof payload.email==="string"?payload.email:null};
 }
+// BM: Dapatkan kunci awam Google untuk memeriksa tandatangan token, bukan percaya payload semata-mata.
+// EN: Obtain Google public keys to validate token signatures rather than trusting payload claims.
 async function publicKey(kid,fetcher){
   if(!cached.keys.length||Date.now()>=cached.expires||!cached.keys.some(k=>k.kid===kid)){
     const res=await fetcher(CERTS_URL,{headers:{Accept:"application/json"}});
@@ -30,6 +44,8 @@ async function publicKey(kid,fetcher){
   if(!key)throw new Error("Firebase token key not found.");
   return crypto.subtle.importKey("jwk",key,{name:"RSASSA-PKCS1-v1_5",hash:"SHA-256"},false,["verify"]);
 }
+// BM: Sahkan bearer token sebelum memberikan akses kepada data peribadi pengguna Monitor.
+// EN: Validate a bearer token before accessing private Monitor user data.
 export async function authenticate(request,env,fetcher=fetch){
   const authorization=request.headers.get("authorization")||"";
   if(!authorization.startsWith("Bearer "))throw new Error("Sign in required.");

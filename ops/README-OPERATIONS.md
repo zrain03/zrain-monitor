@@ -1,3 +1,12 @@
+<!--
+Pembangun / Developer: Zrain
+Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+Dikemas kini / Last updated: 2026-11-04
+Fail / File: ops/README-OPERATIONS.md
+BM: Dokumentasi atau alat operasi monitoring.
+EN: Monitoring operational documentation or tooling.
+-->
+
 # Zrain Monitor — v1.0.21 operational runbook
 
 ## Health endpoints

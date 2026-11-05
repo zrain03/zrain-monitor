@@ -1,7 +1,17 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created (rekod Git terawal / first Git evidence): 2026-10-30
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: src/monitoring-health.js
+ * BM: Modul backend Worker untuk API, monitoring atau keselamatan.
+ * EN: Worker backend module for APIs, monitoring or security.
+ */
 import {nowISO} from './validation.js';
 
 // The Worker being reachable is not proof that the scheduler and D1 are healthy.
 // Public response is deliberately minimal; admin-only detail is in /api/admin/system.
+// BM: Kira kesihatan D1 dan scheduler daripada data sebenar, bukan sekadar Worker hidup.
+// EN: Evaluate D1 and scheduler health from real data instead of Worker liveness alone.
 export async function getMonitoringHealth(db) {
   if (!db) return {healthy:false,reason:'database_unavailable',last_run:null};
   try {
@@ -23,6 +33,8 @@ export async function getMonitoringHealth(db) {
     return {healthy:false,reason:'database_unavailable',last_run:null};
   }
 }
+// BM: Hadkan maklumat health untuk kegunaan awam tanpa pendedahan diagnostik admin.
+// EN: Constrain public health details without exposing administrator diagnostics.
 export function publicMonitoringResponse(result) {
   return new Response(JSON.stringify({service:'zrain-monitor',monitoring:result.healthy?'healthy':'unhealthy',
     // Limit detail available to unauthenticated clients.

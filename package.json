@@ -16,7 +16,7 @@
     "deploy:web": "npm run test:release && firebase deploy --only hosting --project zrain-monitor"
   },
   "dependencies": {
-    "@zrain/ui": "github:zrain03/zrain-ui#fec7b1fe5deab157bdadf0af19d9384b1dc418f0"
+    "@zrain/ui": "github:zrain03/zrain-ui#a109401fa591afa9f66479fa8d86f1ed1679d70b"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
