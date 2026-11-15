@@ -192,14 +192,6 @@
       "last_updated_basis": "content updated in this repair",
       "sha256": "4e8296a96fb25037eb4af0223d1ce66578f1634927bdc9b293db5f97eab8e62e"
     },
-    "ops/verify-production.ps1": {
-      "developer": "Zrain",
-      "created": "2026-10-30",
-      "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "e08e63977821dbb5af2a5d4fae8214913b69c7e6a51747b9ce6fd14086563683"
-    },
     "package-lock.json": {
       "developer": "Zrain",
       "created": "2026-10-30",
@@ -439,38 +431,6 @@
       "last_updated": "2026-11-04",
       "last_updated_basis": "content updated in this repair",
       "sha256": "3f0ba10b3255c8b9206bf254d6cf467bb667dd59a5b953c9781729e7fedb7383"
-    },
-    "scripts/Deploy-Zrain-Monitor.ps1": {
-      "developer": "Zrain",
-      "created": "2026-10-30",
-      "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "d5aaa5b4f9ef000db8339ea96dee9804a19330024e968ef4a3e6dd9f8acee19c"
-    },
-    "scripts/Publish-Zrain-Monitor.ps1": {
-      "developer": "Zrain",
-      "created": "2026-10-30",
-      "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "65ff5c2aa51edc91fa02c72919042d4f07a23f7f38ba984cad1e31ee2862d5ca"
-    },
-    "scripts/Setup-Zrain-Monitor-Local-Git.ps1": {
-      "developer": "Zrain",
-      "created": "2026-10-30",
-      "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "73d9579cf91d4f2f71fc765dc46cef52cf7a95d134ecfe1d7d94994fbd719c42"
-    },
-    "scripts/Setup-Zrain-Monitor.ps1": {
-      "developer": "Zrain",
-      "created": "2026-10-30",
-      "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "60d1edee521c862c3a37cd562d7840c0be02409e17e6b999c34deb74b69e53c5"
     },
     "scripts/sync-zrain-ui.mjs": {
       "developer": "Zrain",

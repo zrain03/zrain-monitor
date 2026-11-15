@@ -24,7 +24,7 @@ test('home makes Uptime, Keep-Awake, Telegram and public beta explicit without l
 test('guide is public, semantically structured and explains every operational status',()=>{
   const s=read('public/how-it-works.html');
   for(const id of ['main','features','status','getting-started','telegram','limits','faq'])assert.ok(s.includes('id="'+id+'"'),id);
-  assert.match(s,/<main id="main"/);
+  assert.match(s,/<main data-zrain-content id="main"/);
   assert.match(s,/<h1 id="guide-title"/);
   assert.match(s,/<nav class="clarity-jump" aria-label="Guide topics"/);
   for(const word of ['UP','VERIFYING','DOWN','UNKNOWN','PAUSED','RECOVERED'])assert.ok(s.includes(word),word);
