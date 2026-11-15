@@ -33,7 +33,7 @@ EN: Zrain Monitor HTML page and user-facing content.
 </head>
 <body data-zrain-policy-layout="links-v1">
 <a class="skip" href="#main">Skip to content</a>
-<header class="topbar zrain-header">
+<header data-zrain-legacy class="topbar zrain-header">
   <div class="container topbar-inner zrain-header__inner">
     <div class="brand zrain-brand">
       <a class="zrain-brand__home" href="https://zrain.web.app" aria-label="Zrain ecosystem home"><img src="/zrain-logo.webp" class="brand-logo-image zrain-brand__logo" alt="" width="42" height="42"><strong class="zrain-brand__name">Zrain</strong></a>
@@ -47,7 +47,7 @@ EN: Zrain Monitor HTML page and user-facing content.
     <div class="account-actions"><a class="button button-outline policy-header-action" href="/">Open Monitor <span aria-hidden="true">&nearr;</span></a></div>
   </div>
 </header>
-<main class="container policy-page" id="main">
+<main data-zrain-content class="container policy-page" id="main">
   <div class="policy-breadcrumb"><a href="/">Zrain Monitor</a><span aria-hidden="true">/</span><span>Privacy Policy</span></div>
   <section class="policy-hero" aria-labelledby="policy-title">
     <div class="policy-hero-copy">
@@ -95,7 +95,7 @@ EN: Zrain Monitor HTML page and user-facing content.
 <!-- EN: Official Monitor Zrain Community; no GitHub feedback or privileged browser tokens. -->
 <section id="zrain-community" class="zrain-community-slot" aria-label="Zrain Community feedback"></section>
 <script defer src="https://zrain-community.web.app/embed.js" data-product="zrain-monitor" data-target="#zrain-community"></script>
-<footer class="footer zrain-footer">
+<footer data-zrain-legacy class="footer zrain-footer">
   <div class="container footer-inner zrain-footer__inner">
     <div class="footer-brand zrain-footer__identity">
       <a class="zrain-footer__home" href="https://zrain.web.app" aria-label="Developed by Zrain. Open Zrain ecosystem home"><img src="/zrain-logo.webp" class="brand-logo-image zrain-footer__logo" alt="" width="38" height="38"><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a>
@@ -111,5 +111,5 @@ EN: Zrain Monitor HTML page and user-facing content.
   <!-- BM: Muat komen sebenar daripada thread khusus Zrain Monitor. -->
   <!-- EN: Load genuine comments from the dedicated Zrain Monitor thread. -->
 
-</body>
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-monitor" data-menu='[{"label":"Ecosystem","href":"https://zrain.web.app/"},{"label":"Home","href":"https://zrain-monitor.web.app/"},{"label":"Community","href":"https://zrain-community.web.app/product.html?product=zrain-monitor"}]'></script></body>
 </html>

@@ -21,7 +21,7 @@ test('All Monitor public pages embed official Zrain Community, never legacy GitH
     const html = read(`public/${page}`);
     assert.match(html, /id="zrain-community" class="zrain-community-slot"/);
     assert.match(html, /src="https:\/\/zrain-community\.web\.app\/embed\.js" data-product="zrain-monitor" data-target="#zrain-community"/);
-    assert.equal((html.match(/data-product="zrain-monitor"/g) ?? []).length, 1);
+    assert.equal((html.match(/src="https:\/\/zrain-community\.web\.app\/embed\.js" data-product="zrain-monitor"/g) ?? []).length, 1);
     assert.ok(html.indexOf('id="zrain-community"') < html.indexOf('<footer'));
     assert.doesNotMatch(html, /feedback-embed\.js|feedback\.css|api\.github\.com|github\.com\/zrain03\/zrain-ecosystem\/issues/i);
   }

@@ -34,7 +34,8 @@ test('All Zrain Monitor pages mount shared identity and narrow brand CSS', () =>
     const html = read(`public/${page}`);
     assert.match(html, /src="\/zrain-ui-config\.js"/);
     assert.match(html, /href="\/monitor-brand-alignment\.css\?v=20261104"/);
-    assert.match(html, /class="(?:topbar )?zrain-header"/);
+    assert.match(html, /src="https:\/\/zrain\.web\.app\/ui\/v2\/layout\.js"/);
+    assert.match(html, /data-zrain-content/);
     assert.match(html, /class="[^"]*zrain-footer/);
   }
   const config = read('public/zrain-ui-config.js');
