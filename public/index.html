@@ -75,14 +75,22 @@ EN: Zrain Monitor HTML page and user-facing content.
   </div>
 </div>
 <main id="main" class="container">
-  <section class="hero" id="hero">
-        <div class="hero-text"><p class="eyebrow">ZRAIN MONITOR / FREE PUBLIC BETA</p><h1>Website &amp; API<br><em>uptime monitoring.</em></h1><p>Monitor public HTTPS websites and APIs with approximately five-minute checks. Understand confirmed downtime and recovery, review incident history, and receive optional Telegram alerts. Keep-Awake requests can help reduce inactivity sleep on some hosts but cannot guarantee availability.</p>
-      <div class="hero-actions"><button id="hero-start" class="button button-primary" type="button">Get started <span aria-hidden="true">&#8599;</span></button><a class="button button-outline clarity-how-link" href="/how-it-works.html">How it works <span aria-hidden="true">&#8599;</span></a><span class="quiet-pill">5-minute checks / Public beta</span></div>
-      <div class="hero-points"><span>Uptime checks</span><span>Keep-Awake</span><span>Incident history</span><span>Telegram alerts</span></div>
-      <p class="clarity-fineprint">Checks are best-effort, not a continuous uptime guarantee. Current beta limits and supported services are explained in <a href="/how-it-works.html#limits">How it works</a>.</p>
+  <section id="hero" class="monitor-start" aria-labelledby="monitor-title">
+    <div class="monitor-start-copy">
+      <h1 id="monitor-title">Zrain Monitor</h1>
+      <p>Track website and API uptime, with optional Telegram alerts when a service goes down or recovers.</p>
+      <p class="monitor-beta">5-minute checks · Public beta</p>
+      <div class="hero-actions"><button id="hero-start" class="button button-primary" type="button">Get started</button><a href="/how-it-works.html">How it works</a></div>
     </div>
-
-    <div class="hero-illustration" aria-hidden="true"><div class="service-strip"><span class="status-bead"></span><div><strong>Services looking good</strong><small>Monitoring with care</small></div><span class="little-check">✓</span></div><div class="heartbeat"><svg viewBox="0 0 380 120" preserveAspectRatio="none"><path d="M0 72H75L95 72L113 25L132 101L153 56L177 72H214L234 27L249 88L270 65L291 72H380" fill="none" stroke="#c45335" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="hero-statuses"><span><i></i> UP</span><span><i></i> MONITORING</span><span><i></i> ONLINE</span></div></div>
+    <div class="monitor-start-detail">
+      <h2>What you can monitor</h2>
+      <dl>
+        <div><dt>Uptime</dt><dd>See the latest check and confirmed incidents.</dd></div>
+        <div><dt>Keep-Awake</dt><dd>Periodic HTTPS requests can reduce idle sleep on some hosts. They cannot guarantee availability.</dd></div>
+        <div><dt>Recovery</dt><dd>Get a Telegram alert when a service responds again.</dd></div>
+      </dl>
+      <a href="/how-it-works.html#limits">Supported services and beta limits</a>
+    </div>
   </section>
   <div id="banner" class="notice" role="status" aria-live="polite" hidden></div>
   <section id="dashboard" hidden>
@@ -94,8 +102,8 @@ EN: Zrain Monitor HTML page and user-facing content.
     <section id="settings" class="section-block"><div class="section-title compact"><div><h2>Account & notifications</h2><p>Manage your profile and choose how to receive service alerts.</p></div></div><div class="settings-card settings-layout"><section class="settings-panel settings-account" aria-labelledby="settings-account-title"><div class="settings-panel-heading"><div><span class="settings-kicker">ACCOUNT</span><h3 id="settings-account-title">Your account</h3><p>Signed-in email address</p></div></div><div class="account-identity" aria-label="Account email"><span class="account-identity-label">ACCOUNT EMAIL</span><p id="settings-email" class="account-identity-email">Signed out</p></div><div id="connect-google-panel" class="connect-google-panel" hidden><div><strong>Connect Google to this account</strong><p>Keep your existing monitors and administrator access when signing in with Google.</p></div><button id="connect-google" class="button button-outline" type="button">Connect Google</button><p id="connect-google-message" class="form-message" role="status" aria-live="polite"></p></div></section><section class="settings-panel settings-telegram" aria-labelledby="telegram-title"><div class="settings-panel-heading"><div><span class="settings-kicker">NOTIFICATIONS</span><h3 id="telegram-title">Telegram alerts</h3><p>Get an alert when a website goes DOWN or RECOVERED. Free and optional.</p></div></div><ol class="telegram-steps" aria-label="Set up Telegram notifications"><li><strong>Connect Telegram</strong><span>Link your Telegram chat to this Zrain Monitor account.</span></li><li><strong>Confirm connection</strong><span>Tap Start in Telegram, return here, then check the connection.</span></li><li><strong>Enable alerts</strong><span>In Active monitors, select your website and enable Telegram alerts for it.</span></li></ol><div id="telegram-settings" class="telegram-settings" aria-live="polite"><p class="muted small">Telegram connection options load after signing in.</p></div></section><section class="settings-panel settings-danger" aria-labelledby="settings-danger-title"><div class="settings-danger-copy"><span class="settings-kicker">ACCOUNT CONTROL</span><h3 id="settings-danger-title">Delete account & data</h3><p>Permanently deletes your monitors, check history, incidents and notifications. You may need to sign in again to confirm.</p></div><div class="setting-actions"><button id="delete-data" class="button button-outline danger" type="button">Delete monitor data & account</button></div></section></div><p class="settings-footnote">Questions about your data? <a href="/privacy.html">Read the Privacy Policy</a>. Need help connecting Telegram? <a href="/how-it-works.html#telegram">Read the Telegram setup guide</a>.</p></section>
     <section id="system" class="section-block" hidden><div class="section-title compact"><div><h2>System Health</h2><p>Administrator-only database, Cron and monitoring diagnostics.</p></div><button class="button button-outline" id="refresh-system">Refresh diagnostics</button></div><div class="detail-card" id="system-content">Loading…</div></section>
   </section>
-  <section id="signedout" class="features" aria-label="Zrain Monitor features"><article><div class="feature-icon">↗</div><h3>Reliable visibility</h3><p>Track actual checks and understand when data is stale instead of trusting outdated green badges.</p></article><article><div class="feature-icon">♡</div><h3>Keep-Awake checks</h3><p>Periodic HTTPS requests help reduce inactivity sleep on some free hosting platforms.</p></article><article><div class="feature-icon">▥</div><h3>Incident history</h3><p>Two consecutive failures confirm downtime. Recovery is confirmed before an incident is closed.</p></article></section>
-  <div class="clarity-public-link"><strong>New to website monitoring?</strong><span>Learn the differences between Uptime, Keep-Awake, a confirmed incident and a Telegram alert before you register.</span><a href="/how-it-works.html">Read the complete guide and FAQs</a></div>
+  <div id="signedout"><a href="/privacy.html">Privacy</a></div>
+  <section id="zrain-community" class="zrain-community-slot" aria-label="Zrain Community feedback"></section>
 </main></div>
 <dialog id="auth-dialog" class="dialog auth-dialog" aria-labelledby="auth-heading">
   <div class="dialog-top">
@@ -176,10 +184,10 @@ EN: Zrain Monitor HTML page and user-facing content.
 <dialog id="create-dialog" class="dialog" aria-labelledby="create-heading"><div class="modal-heading"><div><p class="eyebrow">NEW MONITOR</p><h2 id="create-heading">Monitor a service</h2></div><button class="close" data-close="create-dialog" aria-label="Close">×</button></div><form id="create-form"><label>Monitor name<input id="create-name" type="text" minlength="2" maxlength="70" required placeholder="My Website or API"></label><label>Public HTTPS URL<input id="create-url" type="url" required placeholder="https://example.onrender.com/health"></label><label>Purpose<select id="create-purpose"><option value="uptime">Uptime Monitoring</option><option value="keepawake">Keep-Awake Monitoring</option></select></label><div class="info-card">Checks run approximately every 5 minutes. Requests cannot guarantee that hosting will never restart or sleep. Beta monitors are limited to approved public HTTPS providers.</div><p id="create-message" class="form-message" role="status"></p><button type="submit" class="button button-primary full" id="create-submit">Create monitor</button></form></dialog>
 <!-- BM: Zrain Community rasmi untuk Monitor; tiada GitHub feedback atau token rahsia. -->
 <!-- EN: Official Monitor Zrain Community; no GitHub feedback or privileged browser tokens. -->
-<section id="zrain-community" class="zrain-community-slot" aria-label="Zrain Community feedback"></section>
+
 <script defer src="https://zrain-community.web.app/embed.js" data-product="zrain-monitor" data-target="#zrain-community"></script>
 <footer data-zrain-legacy class="zrain-footer"><div class="zrain-footer__inner"><div class="zrain-footer__identity"><a href="https://zrain.web.app" class="zrain-footer__home"><img src="/zrain-logo.webp" class="zrain-footer__logo" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a></div><div class="zrain-footer__links"><a href="/how-it-works.html">How it works</a><a href="/privacy.html">Privacy</a><a href="mailto:zrain.dev@gmail.com">Contact</a></div></div></footer>
   <!-- BM: Muat komen sebenar daripada thread khusus Zrain Monitor. -->
   <!-- EN: Load genuine comments from the dedicated Zrain Monitor thread. -->
 
-<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-monitor" data-menu='[{"label":"Ecosystem","href":"https://zrain.web.app/"},{"label":"Overview","href":"#dashboard"},{"label":"Monitors","href":"#monitors"}]'></script></body></html>
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-monitor" data-menu='[{"label":"Overview","href":"#main"},{"label":"Guide","href":"/how-it-works.html"},{"label":"Feedback","href":"#zrain-community"}]'></script></body></html>

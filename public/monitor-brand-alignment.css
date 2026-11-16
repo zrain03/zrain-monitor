@@ -59,3 +59,33 @@
 @media (max-width: 600px) { .zrain-community-slot { margin-top: 24px; padding: 0 12px; } }
 
 .zrain-product-workspace{width:100%;min-width:0}.zrain-product-workspace .zrain-brand{display:none}.zrain-product-workspace .topbar,.zrain-product-workspace .monitor-workspace-nav{position:relative;inset:auto;background:#fbf2e6;color:#452733;border-bottom:1px solid #dfc4ae}.zrain-product-workspace .topbar-inner,.zrain-product-workspace .monitor-workspace-nav>div{padding:8px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.zrain-product-workspace :is(.topnav,.account-actions){flex-wrap:wrap;max-width:100%}.zrain-product-workspace main.container{margin-inline:auto;padding-top:16px}
+
+
+/* Keep the signed-out workspace focused on setup and monitoring limits. */
+.zrain-product-workspace > #main { width: min(100% - 24px, 1000px); margin-inline: auto; }
+#hero.monitor-start {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  margin: 12px 0 0; background: #fff5e7; color: #482733;
+  border: 1px solid #dfc2ac; border-radius: 20px; overflow: hidden;
+}
+#hero.monitor-start[hidden] { display: none; }
+.monitor-start-copy, .monitor-start-detail { padding: clamp(16px, 4vw, 34px); }
+.monitor-start-copy h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.03; letter-spacing: -.05em; }
+.monitor-start-copy p { max-width: 38ch; line-height: 1.55; }
+.monitor-start-copy .hero-actions { display: flex; align-items: center; flex-wrap: wrap; margin: 15px 0 0; gap: 12px; }
+.monitor-start-detail { background: #ecd8b7; }
+.monitor-start-detail h2 { font-size: 1.1rem; margin: 0; }
+.monitor-start-detail dl { margin: 8px 0 12px; }
+.monitor-start-detail dl > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); padding: 8px 0; border-bottom: 1px solid #d5ba94; gap: 8px; }
+.monitor-start-detail dt { font-weight: 800; }
+.monitor-start-detail dd { margin: 0; }
+.monitor-start a { color: #723744; }
+.zrain-product-workspace #signedout { text-align: end; padding-block: 8px; }
+.zrain-product-workspace #signedout a { color: inherit; font-size: .85rem; }
+.zrain-product-workspace:has(#dashboard[hidden]) .monitor-workspace-nav .topnav { display: none; }
+.zrain-product-workspace #dashboard .summary-grid { gap: 8px; }
+.zrain-product-workspace #dashboard .metric { min-width: 0; background: #f2dfc5; border-color: #dbbda1; }
+@media (max-width: 700px) {
+  #hero.monitor-start { grid-template-columns: minmax(0, 1fr); }
+  .monitor-start-detail dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}

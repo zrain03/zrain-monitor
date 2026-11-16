@@ -14,8 +14,8 @@ const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const domain='https://zrain-monitor.web.app';
 test('home makes Uptime, Keep-Awake, Telegram and public beta explicit without login',()=>{
   const s=read('public/index.html');
-  assert.match(s,/Website &amp; API<br><em>uptime monitoring/);
-  assert.match(s,/approximately five-minute checks/);
+  assert.match(s,/website and API uptime/i);
+  assert.match(s,/5-minute checks[^<]*Public beta/i);
   assert.match(s,/cannot guarantee availability/);
   assert.match(s,/href="\/how-it-works.html"/);
   assert.match(s,/Get started/);
