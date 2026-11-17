@@ -652,6 +652,6 @@ $("delete-data").addEventListener("click",async()=>{
 });
 document.querySelectorAll(".topnav a").forEach(a=>a.addEventListener("click",()=>updateNav(a.dataset.view)));
 // zrain-monitor-report-v1.0.12: read-only monitoring summary and HTTP glossary.
-import {installMonitorReports} from "./monitor-report.js?v=1.0.14.6";
+import {installMonitorReports} from "./monitor-report.js?v=1.0.14.7";
 installMonitorReports({api,getMonitors:()=>monitors,formatTime:time});
 ready();

@@ -96,3 +96,12 @@ test('File provenance covers all active release files without invented dates', (
     assert.doesNotMatch(entry.created, /(^undefined$|^null$)/);
   }
 });
+
+// Both on-screen and standalone printable reports use the current mascot.
+test('monitor reports embed the current mascot',()=>{
+ const script=read('public/monitor-report.js');
+ assert.ok(script.includes('src="/zrain-mascot.png"'));
+ const encoded=script.match(/data:image\/png;base64,([A-Za-z0-9+/=]+)/)?.[1];
+ assert.ok(encoded);
+ assert.deepEqual(Buffer.from(encoded,'base64'),readFileSync(join(root,'public/zrain-mascot.png')));
+});

@@ -212,9 +212,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "754b6fa16281249260410f63735ecad2bb0736f9d1705f35789bef8f74e1aa86"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated mascot cache revision",
+      "sha256": "bd4b3a6470bfc85487dccc9c016c4b3a2f2ca85d7904505f05d9acfd7d744822"
     },
     "public/auth-links.css": {
       "developer": "Zrain",
@@ -269,8 +269,8 @@
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
       "last_updated": "2026-11-17",
-      "last_updated_basis": "updated for shared visual identity",
-      "sha256": "06c513b2d29e12ba396ceadb271d5ba5ab9ca38dc2edbdfc0834c1752119f333"
+      "last_updated_basis": "updated mascot cache revision",
+      "sha256": "cffb71ecf0e6faa4c4dd0c647e902d1ed357dd15f54712d5680961cebf6a519a"
     },
     "public/monitor-brand-alignment.css": {
       "developer": "Zrain",
@@ -324,9 +324,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "source content updated during GitHub Community Feedback reconciliation / bilingual engineering audit",
-      "sha256": "c9a4ba254c158ab767b087871b5995ba719bfa481f31acfd2f53040418141f45"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated report mascot identity",
+      "sha256": "c165e3ad8d1d24fa8d2a9fe5b48945fd01ff2198654574c316129daff7f361fb"
     },
     "public/monitor-scrollspy.js": {
       "developer": "Zrain",
@@ -597,16 +597,16 @@
       "created": "2026-11-04",
       "created_basis": "created during current repair",
       "last_updated": "2026-11-17",
-      "last_updated_basis": "updated cache revision assertion",
-      "sha256": "18730166a3a5c406b39dde6bde93af657d0cadcefebbb27ecc033b574e78c61e"
+      "last_updated_basis": "cover updated report mascot",
+      "sha256": "3f5a1ff9c6bfca59a0fa6b89e81f35d1abda72d63a8114cd031c10bdcfab2620"
     },
     "test/notification-card.test.js": {
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "7c4afe87e99258442af85e5c1677d300eed45a8ed1b74627472d183ac81d704c"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated mascot cache revision",
+      "sha256": "33b97883424218166291fa66c4f0c10697f072ee2f356ad140a18b0064e40cdf"
     },
     "test/public-clarity.test.js": {
       "developer": "Zrain",
