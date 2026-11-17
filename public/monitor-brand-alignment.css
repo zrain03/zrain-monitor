@@ -89,3 +89,8 @@
   #hero.monitor-start { grid-template-columns: minmax(0, 1fr); }
   .monitor-start-detail dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
+
+/* Keep shared navigation labels clear of the Monitor workspace. */
+.zr-shared-page .zr-compact .zr-shared-content { margin-top: 16px; }
+.zrain-product-workspace .monitor-workspace-nav .account-actions { margin-left: auto; }
+.zrain-product-workspace:has(#dashboard[hidden]) .monitor-workspace-nav { background: transparent; border: 0; }
