@@ -78,3 +78,36 @@
 
 /* Explain safe account linking without changing the approved auth layout. */
 .auth-dialog .google-account-help{margin:8px 0 2px;color:#697686;font-size:11px;line-height:1.55}
+
+/* Authentication uses a readable branded surface in both modes. */
+.auth-dialog.dialog{color:#351d25;background:#fff9ef;border-color:#d7b8a7;box-shadow:0 24px 70px #18080d66}
+.auth-dialog h2,.auth-dialog h3,.auth-dialog form label{color:#351d25}
+.auth-dialog>p,.auth-dialog .dialog-note,.auth-dialog .auth-help,.auth-dialog .reset-password-panel>p{color:#624d4d}
+.auth-dialog .dialog-top .brand-logo-image{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.auth-dialog .dialog-close{color:#59333e}
+.auth-dialog .auth-tabs button{color:#624d50;border-bottom-color:#dfc8ba}
+.auth-dialog .auth-tabs button.active{color:#702f3e;border-color:#702f3e}
+.auth-dialog form input{background:#fffefa;color:#351d25;border:1px solid #af8d83;caret-color:#702f3e}
+.auth-dialog form input::placeholder{color:#78676a;opacity:1}
+.auth-dialog form input:focus-visible,.auth-dialog button:focus-visible{outline:3px solid #9a5963;outline-offset:2px}
+.auth-dialog .auth-submit{background:#692b3b;color:#fff8ed;box-shadow:none}
+.auth-dialog .auth-submit:hover{background:#4d1e2c}
+.auth-dialog .forgot-link,.auth-dialog .back-to-signin,.auth-dialog .google-redirect,.auth-dialog .password-row button{color:#783a46}
+.auth-dialog .auth-divider{color:#665557}
+.auth-dialog .google-button{background:#fffefa;color:#282127;border-color:#8f7775}
+.auth-dialog .google-button:hover{background:#f7e9dc}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog{background:#42212c;color:#fff3e1;border-color:#946b70}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog h2,body:has(.zr-compact[data-theme="night"]) .auth-dialog h3,body:has(.zr-compact[data-theme="night"]) .auth-dialog form label{color:#fff3e1}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog>p,body:has(.zr-compact[data-theme="night"]) .auth-dialog .dialog-note,body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-help,body:has(.zr-compact[data-theme="night"]) .auth-dialog .reset-password-panel>p{color:#ead4c3}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .dialog-close,body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-tabs button{color:#ead4c3}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-tabs button.active{color:#f4cb89;border-color:#f4cb89}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-submit{background:#efc577;color:#35151f}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-submit:hover{background:#ffdda0}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .forgot-link,body:has(.zr-compact[data-theme="night"]) .auth-dialog .back-to-signin,body:has(.zr-compact[data-theme="night"]) .auth-dialog .google-redirect{color:#f4cb89}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-divider{color:#e5cab9}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .auth-context,body:has(.zr-compact[data-theme="night"]) .auth-dialog .verify-panel{background:#f9eee3;color:#351d25;border-color:#d7b5a6}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog .form-message:not(.ok){color:#ffd6bd}
+body:has(.zr-compact[data-theme="night"]) .auth-dialog button:focus-visible,body:has(.zr-compact[data-theme="night"]) .auth-dialog input:focus-visible{outline-color:#f4cb89}
+
+body:has(.zr-compact[data-theme="night"]) .auth-dialog form label small,body:has(.zr-compact[data-theme="night"]) .auth-dialog .google-account-help{color:#ead4c3}
+.auth-dialog::backdrop{background:rgba(28,10,17,.72);backdrop-filter:blur(3px)}

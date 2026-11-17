@@ -7,4 +7,4 @@
  * EN: Monitor frontend behavior or configuration.
  */
 import {mountZrainUI} from "./zrain-ui.js";
-mountZrainUI({product:"Monitor",logoSrc:"/zrain-logo.webp",productHref:"/"});
+mountZrainUI({product:"Monitor",logoSrc:"/zrain-mascot.png?v=20261117",productHref:"/"});

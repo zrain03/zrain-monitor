@@ -32,7 +32,7 @@ test('Zrain UI uses the supplied immutable Golden Reference commit', () => {
 test('All Zrain Monitor pages mount shared identity and narrow brand CSS', () => {
   for (const page of ['index.html', 'how-it-works.html', 'privacy.html']) {
     const html = read(`public/${page}`);
-    assert.match(html, /src="\/zrain-ui-config\.js"/);
+    assert.match(html, /src="\/zrain-ui-config\.js\?v=identity-20261117"/);
     assert.match(html, /href="\/monitor-brand-alignment\.css\?v=20261104"/);
     assert.match(html, /src="https:\/\/zrain\.web\.app\/ui\/v2\/layout\.js"/);
     assert.match(html, /data-zrain-content/);

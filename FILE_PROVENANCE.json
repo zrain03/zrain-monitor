@@ -220,9 +220,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "1f6ee41c4e46d87c41efb2e4b8642fed66f8d337f435d3aaa4c5bd53c5dc85d9"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "6e95c823c427d35d42e20f4d730fddfd7e6627d9c5493b7dea4f1cceab329537"
     },
     "public/brand.css": {
       "developer": "Zrain",
@@ -260,17 +260,17 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-05",
-      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
-      "sha256": "42c7270ac2ab3cd4cb63b0bbece3786a66186f39a8bbdcdcc351eca61808801f"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "0f0e425543e7af0827207d042a8bfb5b7cd48360ca5a37adcda3d34e1c4c733f"
     },
     "public/index.html": {
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-05",
-      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
-      "sha256": "5c0c93bea708a8accd442d464819e9eee12e6b9039d8f38a9f27cf4a9f3d826d"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "06c513b2d29e12ba396ceadb271d5ba5ab9ca38dc2edbdfc0834c1752119f333"
     },
     "public/monitor-brand-alignment.css": {
       "developer": "Zrain",
@@ -356,9 +356,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-05",
-      "last_updated_basis": "canonical Zrain Community replaces GitHub-based public feedback",
-      "sha256": "c04a80f61499c79de164f9bc2afcd0e01a6ae662f4a7c9f2476d19aba96ea520"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "4ffcf59ecf04a6d66fbc8a257c802330c226cff4d0187241211e6fa128a79b51"
     },
     "public/public-clarity-v1.css": {
       "developer": "Zrain",
@@ -420,9 +420,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "1f8a5234fe3ecf4bf629866256bd3411dbe7cd0fcd9bd9e0f72d7969db42075c"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "3f44695a855820d589a7614a23f7ec8782a309252e6e6ebdcedf4c4381314834"
     },
     "public/zrain-ui.js": {
       "developer": "Zrain",
@@ -532,9 +532,9 @@
       "developer": "Zrain",
       "created": "2026-10-30",
       "created_basis": "earliest path-level Git introduction",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated in this repair",
-      "sha256": "3bf89e00640a6ce1722625383388e731ccc8dbdb3492a300566f2f891c775d58"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated cache revision assertion",
+      "sha256": "9e946d180a37c286edcdf6f1f4214541500c57cfe71156012d9831c9bcbea1ab"
     },
     "test/auth.test.js": {
       "developer": "Zrain",
@@ -596,9 +596,9 @@
       "developer": "Zrain",
       "created": "2026-11-04",
       "created_basis": "created during current repair",
-      "last_updated": "2026-11-04",
-      "last_updated_basis": "content updated during current repair",
-      "sha256": "ffbe9208498c37eb0b846a79cbace80486565caf710711e25ef22b8d1717b205"
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated cache revision assertion",
+      "sha256": "18730166a3a5c406b39dde6bde93af657d0cadcefebbb27ecc033b574e78c61e"
     },
     "test/notification-card.test.js": {
       "developer": "Zrain",
@@ -687,6 +687,14 @@
       "last_updated": "2026-11-04",
       "last_updated_basis": "content updated in this repair",
       "sha256": "4d2d07de6f244a595ae8d1e9e26cfb631ccd573a29657dec165b6555858acd48"
+    },
+    "public/zrain-mascot.png": {
+      "developer": "Zrain",
+      "created": "2026-11-17",
+      "created_basis": "date imported from existing Zrain Ecosystem asset; original creation date unverified",
+      "last_updated": "2026-11-17",
+      "last_updated_basis": "updated for shared visual identity",
+      "sha256": "9fc1350664f3f6488d4372bb00c0b9d8c178269f6b70334a7d1ab3a729bbc2c6"
     }
   }
 }

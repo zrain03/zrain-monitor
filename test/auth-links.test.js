@@ -20,7 +20,7 @@ test('Monitor authentication uses the same compact Zrain Links dialog structure'
   assert.match(html,/id="signup-tab"[^>]*>Create account/);
   assert.match(html,/id="signin-tab"[^>]*>Sign in/);
   assert.match(html,/src="\/app\.js\?v=\d+(?:\.\d+){2,3}"/);
-  assert.match(html,/href="\/auth-links\.css\?v=1\.0\.3"/);
+  assert.match(html,/href="\/auth-links\.css\?v=identity-20261117"/);
   assert.match(css,/width:min\(460px,calc\(100vw - 28px\)\)/);
   assert.match(css,/\.auth-dialog \[hidden\]/);
   assert.match(css,/@media\(max-width:540px\)/);
